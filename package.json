@@ -4,7 +4,8 @@
   "description": "An auction website created for Semester Project 2 Noroff",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server --open=./dist/index.html",
+    "build:css": "tailwind build -i src/css/styles.css -o dist/styles.css && live-server --open=./dist/index.html",
     "format": "prettier -w src/**/*.{css,js,json}",
     "lint": "eslint src/**/*.js",
     "prepare": "husky install"
@@ -23,7 +24,8 @@
     "eslint": "^8.28.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.2.4"
   },
   "lint-staged": {
     "*.js": "eslint --fix",
