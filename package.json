@@ -1,6 +1,6 @@
 {
   "name": "semester-project-2",
-  "version": "0.0.5",
+  "version": "0.0.4",
   "description": "An auction website created for Semester Project 2 Noroff",
   "main": "index.js",
   "scripts": {
@@ -28,5 +28,8 @@
   "lint-staged": {
     "*.js": "eslint --fix",
     "src/**/*.{css,js,json}": "prettier --write"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
   }
 }
