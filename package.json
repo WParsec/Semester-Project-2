@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier -w src/**/*.{css,js,json}",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,12 @@
   "homepage": "https://github.com/WParsec/Semester-Project-2#readme",
   "devDependencies": {
     "eslint": "^8.28.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "src/**/*.{css,js,json}": "prettier --write"
   }
 }
