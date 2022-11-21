@@ -1,0 +1,23 @@
+{
+  "name": "semester-project-2",
+  "version": "0.0.2",
+  "description": "An auction website created for Semester Project 2 Noroff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier -w src/**/*.{css,js,json}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WParsec/Semester-Project-2.git"
+  },
+  "author": "Tom Erik William Ertvaag",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WParsec/Semester-Project-2/issues"
+  },
+  "homepage": "https://github.com/WParsec/Semester-Project-2#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
