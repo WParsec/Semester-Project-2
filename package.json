@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "live-server --open=./dist/index.html",
-    "build:css": "tailwind build -i src/css/styles.css -o dist/styles.css && live-server --open=./dist/index.html",
-    "format": "prettier -w src/**/*.{css,js,json}",
+    "watch": "npx tailwindcss -i src/css/styles.css -o dist/styles.css --watch",
+    "build": "tailwind build -i src/css/styles.css -o dist/styles.css --watch & live-server --open=./dist/index.html",
+    "format": "prettier -w src/**/*.{css,js}",
     "lint": "eslint src/**/*.js",
     "prepare": "husky install"
   },
