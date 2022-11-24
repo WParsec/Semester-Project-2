@@ -6,9 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GavelBay | Home</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer type="module" src="../src/js/index.js"></script>
 </head>
-<body class="bg-dark flex">
-    <h1 class="bg-dark">Test</h1>
-    <h1 class="bg-orange">Test</h1>
-</body>
+
+<body class="bg-white">
+    <nav class="p-5 shadow md:flex md:items-center md:justify-between">
+      <div class="flex justify-between items-center ">
+        <span class="cursor-pointer">
+          <img class="h-7" src="./assets/logo.png" alt="">
+        </span>
+  
+        <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
+          <div>Menu</div>
+        </span>
+      </div>
+  
+      <ul id="menu" class="flex flex-col gap-12 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8">
+        <li class="">
+          <a href="#" class="">Explore</a>
+        </li>
+        <li class="">
+          <a href="#" class="">Login</a>
+        </li>
+        <li class="hidden">
+          <a href="#" class="">New Listing</a>
+        </li>
+        <li class="hidden">
+          <a href="#" class="">Account</a>
+        </li>
+  
+        <button class="bg-orange text-dark duration-400 px-7 py-3 mx-4 rounded ">
+          Register
+        </button>
+      </ul>
+    </nav>
+  </body>
 </html>
