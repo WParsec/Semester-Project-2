@@ -5,36 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GavelBay | Home</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="output.css">
     <script defer type="module" src="../src/js/index.js"></script>
 </head>
-<body class="bg-white">
-    <nav class="p-5 shadow md:flex md:items-center md:justify-between">
-      <div class="flex justify-between items-center ">
-        <span class="cursor-pointer">
-          <img class="h-7" src="./assets/logo.png" alt="">
-        </span>
-        <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
-          <div>Menu</div>
-        </span>
+<body class="bg-white font-sans">
+    <header>
+        <nav class="p-5 shadow-xl">
+            <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
+              <div class="flex justify-between items-center ">
+                <span class="cursor-pointer">
+                  <img class="h-7 md:h-9" src="./assets/logo.png" alt="">
+                </span>
+                <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
+                  <div>Menu</div>
+                </span>
+              </div>
+              <ul id="menu" class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white">
+                <li class="pt-10 md:pt-0">
+                  <a href="#" class="active">Explore</a>
+                </li>
+                <li class="p-3">
+                  <a href="#" class="">Login</a>
+                </li>
+                <li class="hidden p-3">
+                  <a href="#" class="">New Listing</a>
+                </li>
+                <li class="hidden p-3">
+                  <a href="#" class="">Account</a>
+                </li>
+                <button class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all">
+                  Register
+                </button>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <main class="bg-white relative">
+      <div class="header-img h-full max-w-6xl max-h-56 lg:rounded-md flex items-center justify-center">
+        <h1 class="text-white text-center font-bold text-xl tracking-widest sm:text-3xl sm:tracking-widest md:text-4xl md:tracking-widest">YOUR ONLINE NFT AUCTION</h1>
       </div>
-      <ul id="menu" class="flex flex-col gap-12 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8">
-        <li class="">
-          <a href="#" class="">Explore</a>
-        </li>
-        <li class="">
-          <a href="#" class="">Login</a>
-        </li>
-        <li class="hidden">
-          <a href="#" class="">New Listing</a>
-        </li>
-        <li class="hidden">
-          <a href="#" class="">Account</a>
-        </li>
-        <button class="bg-orange text-dark duration-400 px-7 py-3 mx-4 rounded ">
-          Register
-        </button>
-      </ul>
-    </nav>
+      <div class="container m-auto max-w-6xl border-b mb-8">
+        <h2 class="text-dark text-center font-bold text-3xl tracking-widest pb-2 md:text-left">Explore</h2>
+      </div>
+      <!-- search field -->
+      <div class="w-full max-w-6xl lg:m-auto">
+        <form method="GET" action="" id="searchListings" class="px-5 lg:p-0 grid grid-flow-row sm:grid-flow-col gap-8">
+          <!-- Search post input -->
+          <div class="flex flex-row gap-4 sm:gap-8">
+            <input
+              class="focus:outline-none p-3 shadow focus:shadow-xl rounded-md w-full"
+              id="searchListings"
+              type="text"
+              name="search"
+              placeholder="Search Listings"
+              minlength="1"
+              maxlength="100"
+            />
+          <button class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all w-full">Search</button>
+          </div>
+          <div class="flex gap-4 sm:gap-8 w-full justify-between mt-4 sm:mt-0">
+            <button class="bg-white text-dark duration-400 px-7 py-3 rounded-md shadow-lg transition-all w-full">Newest</button>
+            <button class="bg-white text-dark duration-400 px-7 py-3 rounded-md shadow-lg transition-all w-full">A to Z</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+    </footer>
   </body>
 </html>
