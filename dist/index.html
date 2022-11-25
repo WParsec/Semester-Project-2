@@ -53,7 +53,7 @@
           <!-- Search post input -->
           <div class="flex flex-row gap-4 sm:gap-8">
             <input
-              class="focus:outline-none p-3 shadow focus:shadow-xl rounded-md w-full"
+              class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md w-full"
               id="searchListings"
               type="text"
               name="search"
@@ -64,8 +64,14 @@
           <button class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all w-full">Search</button>
           </div>
           <div class="flex gap-4 sm:gap-8 w-full justify-between mt-4 sm:mt-0">
-            <button class="bg-white text-dark duration-400 px-7 py-3 rounded-md shadow-lg transition-all w-full">Newest</button>
-            <button class="bg-white text-dark duration-400 px-7 py-3 rounded-md shadow-lg transition-all w-full">A to Z</button>
+            <select class="bg-white text-dark duration-400 px-7 py-3 rounded-md shadow-lg transition-all w-full">
+              <option value="Newest">Newest</option>
+              <option value="Oldest">Oldest</option>
+            </select>
+            <select class="bg-white text-dark duration-400 px-7 py-3 rounded-md shadow-lg transition-all w-full">
+              <option value="alphabetical">A to Z</option>
+              <option value="inverse-alphabetical">Z to A</option>
+            </select>
           </div>
         </form>
       </div>

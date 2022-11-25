@@ -590,10 +590,6 @@ html {
   margin-top: 1rem;
 }
 
-.mt-8{
-  margin-top: 2rem;
-}
-
 .block{
   display: block;
 }
@@ -638,10 +634,6 @@ html {
   grid-auto-flow: row;
 }
 
-.grid-flow-col{
-  grid-auto-flow: column;
-}
-
 .flex-row{
   flex-direction: row;
 }
@@ -662,24 +654,16 @@ html {
   justify-content: space-between;
 }
 
-.justify-around{
-  justify-content: space-around;
-}
-
 .gap-10{
   gap: 2.5rem;
 }
 
-.gap-2{
-  gap: 0.5rem;
+.gap-8{
+  gap: 2rem;
 }
 
 .gap-4{
   gap: 1rem;
-}
-
-.gap-8{
-  gap: 2rem;
 }
 
 .rounded-md{
@@ -787,15 +771,10 @@ html {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow{
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+.shadow-md{
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.outline-none{
-  outline: 2px solid transparent;
-  outline-offset: 2px;
 }
 
 .transition-all{
@@ -863,27 +842,13 @@ main {
   outline-offset: 2px;
 }
 
-.focus\:ring-0:focus{
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
 @media (min-width: 640px){
   .sm\:mt-0{
     margin-top: 0px;
   }
 
-  .sm\:w-1\/2{
-    width: 50%;
-  }
-
   .sm\:grid-flow-col{
     grid-auto-flow: column;
-  }
-
-  .sm\:flex-row{
-    flex-direction: row;
   }
 
   .sm\:gap-8{
@@ -923,19 +888,6 @@ main {
 
   .md\:w-auto{
     width: auto;
-  }
-
-  .md\:w-max{
-    width: -moz-max-content;
-    width: max-content;
-  }
-
-  .md\:w-full{
-    width: 100%;
-  }
-
-  .md\:grid-flow-col{
-    grid-auto-flow: column;
   }
 
   .md\:flex-row{
