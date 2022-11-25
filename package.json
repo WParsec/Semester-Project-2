@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "live-server --open=./dist/index.html",
-    "watch": "npx tailwindcss build -i src/css/styles.css -o dist/styles.css --watch && live-server --open=./dist/index.html",
-    "build": "npx tailwindcss build -i src/css/styles.css -o dist/styles.css && live-server --open=./dist/index.html",
+    "watch": "npx tailwindcss -i src/css/styles.css -o ./dist/styles.css --watch & live-server",
+    "build": "npx tailwindcss -i src/css/styles.css -o dist/styles.css && live-server --open=./dist/index.html",
     "format": "prettier -w src/**/*.{css,js}",
     "lint": "eslint src/**/*.js",
     "prepare": "husky install"
