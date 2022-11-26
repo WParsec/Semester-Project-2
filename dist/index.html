@@ -41,7 +41,7 @@
           </nav>
     </header>
     <main class="bg-white relative">
-      <div class="header-img h-full max-w-6xl max-h-56 lg:rounded-md flex items-center justify-center">
+      <div class="header-img max-w-6xl h-56 lg:rounded-md flex items-center justify-center">
         <h1 class="text-white text-center font-bold text-xl tracking-widest sm:text-3xl sm:tracking-widest md:text-4xl md:tracking-widest">YOUR ONLINE NFT AUCTION</h1>
       </div>
       <div class="container m-auto max-w-6xl border-b mb-8">
@@ -49,7 +49,7 @@
       </div>
       <!-- search field -->
       <div class="w-full max-w-6xl lg:m-auto">
-        <form method="GET" action="" id="searchListings" class="px-5 lg:p-0 grid grid-flow-row sm:grid-flow-col gap-8">
+        <form method="GET" action="" id="searchListings" class="px-5 lg:px-0 grid grid-flow-row sm:grid-flow-col gap-2 sm:gap-8">
           <!-- Search post input -->
           <div class="flex flex-row gap-4 sm:gap-8">
             <input
@@ -61,22 +61,43 @@
               minlength="1"
               maxlength="100"
             />
-          <button class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all w-full">Search</button>
+          <button class="cta text-dark duration-400 py-3 rounded-md shadow-lg hover:scale-110 transition-all w-full">Search</button>
           </div>
           <div class="flex gap-4 sm:gap-8 w-full justify-between mt-4 sm:mt-0">
-            <select class="bg-white text-dark duration-400 px-7 py-3 rounded-md shadow-lg transition-all w-full">
+            <select class="bg-white text-dark py-3 px-7 rounded-md shadow-lg transition-all w-full">
               <option value="Newest">Newest</option>
               <option value="Oldest">Oldest</option>
             </select>
-            <select class="bg-white text-dark duration-400 px-7 py-3 rounded-md shadow-lg transition-all w-full">
+            <select class="bg-white text-dark py-3 px-7 rounded-md shadow-lg transition-all w-full">
               <option value="alphabetical">A to Z</option>
               <option value="inverse-alphabetical">Z to A</option>
             </select>
           </div>
         </form>
       </div>
+      <!-- Listings grid -->
+      <div class="container m-auto max-w-6xl w-full mt-8 mb-8 px-5 lg:px-0">
+        <div id="listingGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+          <div class="listing-card"></div>
+        </div>
+      </div>
     </main>
-    <footer>
+    <footer class="h-56">
     </footer>
   </body>
 </html>
