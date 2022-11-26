@@ -1,6 +1,6 @@
 {
   "name": "semester-project",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Semester Project third semester Noroff",
   "main": "index.js",
   "type": "module",
