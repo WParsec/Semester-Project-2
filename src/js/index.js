@@ -1,2 +1,2 @@
-import { toggleMenu } from "./nav/toggleMenu.js";
+import { toggleMenu } from "./ui/nav/toggleMenu.js";
 toggleMenu();

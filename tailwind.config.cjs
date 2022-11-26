@@ -9,9 +9,9 @@ module.exports = {
       "pink": "#FF9090",
       "warning": "#E35E3F",
       "gray": "#EEEDEF",
-      "green": "#50AA33",
+      "green": "#A1E08E",
       "soft": "#C8B8D5",
-      "gray-light": "#d3dce6",
+      "dark-opacity": "rgba(0, 0, 0, 0.5)",
     },
     fontFamily: {
       sans: ["Montserrat", "sans-serif"],

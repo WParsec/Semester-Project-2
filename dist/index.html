@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GavelBay | Home</title>
+    <title>GavelBay | Home | Explore</title>
     <link rel="stylesheet" href="output.css">
-    <script defer type="module" src="../src/js/index.js"></script>
+    <script defer type="module" src="../src/js/pages/explore.js"></script>
 </head>
 <body class="bg-white font-sans">
     <header>
@@ -20,7 +20,7 @@
                   <div>Menu</div>
                 </span>
               </div>
-              <ul id="menu" class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white">
+              <ul id="menu" class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full">
                 <li class="pt-10 md:pt-0">
                   <a href="#" class="active">Explore</a>
                 </li>
@@ -45,7 +45,7 @@
         <h1 class="text-white text-center font-bold text-xl tracking-widest sm:text-3xl sm:tracking-widest md:text-4xl md:tracking-widest">YOUR ONLINE NFT AUCTION</h1>
       </div>
       <div class="container m-auto max-w-6xl border-b mb-8">
-        <h2 class="text-dark text-center font-bold text-3xl tracking-widest pb-2 md:text-left">Explore</h2>
+        <h2 class="text-dark text-center font-bold text-3xl tracking-widest pb-2 md:text-left pl-5 lg:pl-0">Explore</h2>
       </div>
       <!-- search field -->
       <div class="w-full max-w-6xl lg:m-auto">
@@ -53,7 +53,7 @@
           <!-- Search post input -->
           <div class="flex flex-row gap-4 sm:gap-8">
             <input
-              class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md w-full"
+              class="duration-500 focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md w-full"
               id="searchListings"
               type="text"
               name="search"
@@ -77,23 +77,37 @@
       </div>
       <!-- Listings grid -->
       <div class="container m-auto max-w-6xl w-full mt-8 mb-8 px-5 lg:px-0">
-        <div id="listingGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
-          <div class="listing-card"></div>
+        <div id="listingGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <template id="listingTemplate">
+            <div id="listingMedia" class="listing-card">
+              <div id="listingLabel" class="h-1/3 w-full bg-dark-opacity absolute bottom-0 rounded-br-lg rounded-bl-lg p-3">
+                <!-- See more text - hidden -->
+                <p class="text-sm hidden">See more</p>
+                <div class="flex gap-1"><h3 id="listingTitle" class="font-medium">Glowstag</h3><p class="text-sm">by <span id="listingSeller">NFTits</span></p></div>
+                <p class="text-sm">Tokens:  <span id="listingAmount" class="text-green text-base">600</span></p>
+                <p class="text-sm">Ends at: <span id="listingEnds" class="">24.12.2022</span></p>
+              </div>
+            </div>
+          </template>
+          <div class="listing-card animation-load"></div>
+          <div class="listing-card animation-load-2"></div>
+          <div class="listing-card animation-load"></div>
+          <div class="listing-card animation-load-2"></div>
+          <div class="listing-card animation-load"></div>
+          <div class="listing-card animation-load-2"></div>
+          <div class="listing-card animation-load"></div>
+          <div class="listing-card animation-load-2"></div>
+          <div class="listing-card animation-load"></div>
+          <div class="listing-card animation-load-2"></div>
+          <div class="listing-card animation-load"></div>
+          <div class="listing-card animation-load-2"></div>
+        </div>
+        <div class="container max-w-6xl w-full py-24 flex">
+          <div class="flex justify-evenly max-w-xs items-center m-auto">
+            <div id="arrow-back" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer"><img src="/dist/assets/arrow.png" alt=""></div>
+            <div class="px-4"><p>Page 1 of X</p></div>
+            <div id="arrow-next" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer"><img src="/dist/assets/arrow.png" class="rotate-180" alt=""></div>
+          </div>
         </div>
       </div>
     </main>
