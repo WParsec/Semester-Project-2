@@ -11,7 +11,7 @@ module.exports = {
       "gray": "#EEEDEF",
       "green": "#A1E08E",
       "soft": "#C8B8D5",
-      "dark-opacity": "rgba(0, 0, 0, 0.5)",
+      "dark-opacity": "rgba(0, 0, 0, 0.6)",
     },
     fontFamily: {
       sans: ["Montserrat", "sans-serif"],

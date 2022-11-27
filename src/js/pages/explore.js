@@ -21,7 +21,7 @@ async function createAllListings(sortUrl = "") {
   // pagination
   let eachPage = 16;
   let i = 0;
-  for (i; i < 16; i++) {
+  for (i; i < eachPage; i++) {
     // Destructuring each result from loop
     const {
       bids: { amount },
@@ -35,15 +35,16 @@ async function createAllListings(sortUrl = "") {
     } = resultArray[i];
     // Creates template for each result
     const listingClone = document.importNode(listingTemplate, true);
+    if (media[0]) {
+      listingClone.querySelector("#listingMedia").style.backgroundImage = `url(${media[0]})`;
+    } else {
+      eachPage = eachPage + 1;
+      continue;
+    }
     listingClone.querySelector("#listingTitle").innerText = `${title}`;
     listingClone.querySelector("#listingSeller").innerText = `${name}`;
     listingClone.querySelector("#listingAmount").innerText = `${amount}`;
     listingClone.querySelector("#listingEnds").innerText = `${endsAt}`;
-    if (media) {
-      listingClone.querySelector("#listingMedia").style.backgroundImage = `url(${media[0]})`;
-    } else {
-      continue;
-    }
     listingGrid.appendChild(listingClone);
     console.log(media);
   }
