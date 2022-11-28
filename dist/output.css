@@ -711,10 +711,6 @@ html {
   gap: 2rem;
 }
 
-.gap-1{
-  gap: 0.25rem;
-}
-
 .rounded-md{
   border-radius: 0.375rem;
 }
@@ -750,14 +746,6 @@ html {
 
 .p-3{
   padding: 0.75rem;
-}
-
-.p-0{
-  padding: 0px;
-}
-
-.p-1{
-  padding: 0.25rem;
 }
 
 .p-2{
@@ -812,14 +800,6 @@ html {
 
 .pl-3{
   padding-left: 0.75rem;
-}
-
-.pl-10{
-  padding-left: 2.5rem;
-}
-
-.pl-4{
-  padding-left: 1rem;
 }
 
 .text-center{
@@ -1110,10 +1090,6 @@ main {
 
   .lg\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-3{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:rounded-md{
