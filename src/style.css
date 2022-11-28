@@ -40,7 +40,7 @@ main {
 
 .listing-card {
   width: 100%;
-  height: 280px;
+  height: 360px;
   background-position: center;
   background-size: cover;
   color: #fcfcfc;
@@ -54,6 +54,10 @@ main {
 .listing-card:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   cursor: pointer;
+}
+
+.listing-label {
+  transition: 400ms;
 }
 
 /* ---------------------------- Animations ---------------------------- */
