@@ -586,6 +586,10 @@ html {
   margin-right: 0.5rem;
 }
 
+.mt-10{
+  margin-top: 2.5rem;
+}
+
 .mb-8{
   margin-bottom: 2rem;
 }
@@ -596,6 +600,10 @@ html {
 
 .mt-8{
   margin-top: 2rem;
+}
+
+.mt-16{
+  margin-top: 4rem;
 }
 
 .block{
@@ -648,6 +656,10 @@ html {
 
 .max-w-xs{
   max-width: 20rem;
+}
+
+.max-w-md{
+  max-width: 28rem;
 }
 
 .rotate-180{
@@ -757,6 +769,11 @@ html {
   padding-bottom: 1rem;
 }
 
+.px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .px-7{
   padding-left: 1.75rem;
   padding-right: 1.75rem;
@@ -857,6 +874,11 @@ html {
   color: rgb(161 224 142 / var(--tw-text-opacity));
 }
 
+.text-warning{
+  --tw-text-opacity: 1;
+  color: rgb(227 94 63 / var(--tw-text-opacity));
+}
+
 .opacity-0{
   opacity: 0;
 }
@@ -891,6 +913,10 @@ html {
 
 .duration-500{
   transition-duration: 500ms;
+}
+
+.duration-300{
+  transition-duration: 300ms;
 }
 
 .ease-in{
@@ -947,6 +973,10 @@ main {
   transition: 400ms;
 }
 
+.input-error {
+  border: 1px solid #e35e3f;
+}
+
 /* ---------------------------- Animations ---------------------------- */
 
 @keyframes load {
@@ -997,6 +1027,10 @@ main {
     gap: 2rem;
   }
 
+  .sm\:p-3{
+    padding: 0.75rem;
+  }
+
   .sm\:text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -1014,6 +1048,10 @@ main {
 
   .md\:z-auto{
     z-index: auto;
+  }
+
+  .md\:m-0{
+    margin: 0px;
   }
 
   .md\:flex{
@@ -1059,10 +1097,6 @@ main {
 
   .md\:pl-0{
     padding-left: 0px;
-  }
-
-  .md\:pt-0{
-    padding-top: 0px;
   }
 
   .md\:text-left{

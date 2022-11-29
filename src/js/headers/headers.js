@@ -7,3 +7,14 @@ export function createStandardHeader() {
     },
   };
 }
+
+// Get all listings
+export function createHeaderWithInputs(values) {
+  return {
+    method: "POST",
+    body: JSON.stringify({ ...values }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  };
+}

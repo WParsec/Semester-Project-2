@@ -60,6 +60,10 @@ main {
   transition: 400ms;
 }
 
+.input-error {
+  border: 1px solid #e35e3f;
+}
+
 /* ---------------------------- Animations ---------------------------- */
 
 @keyframes load {
