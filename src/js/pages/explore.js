@@ -31,14 +31,17 @@ async function createAllListings(sortUrl = "") {
   for (let i = pageStart; i < pageStart + eachPage; i++) {
     // Destructuring each result from loop
     const {
-      bids: { amount },
+      //   bids: { amount },
       seller: { name },
-      description,
       title,
       media,
-      id,
       endsAt,
     } = resultArray[i];
+    // finding highest bid
+    let amount;
+    if (resultArray[i].bids.length > 0) {
+      amount = resultArray[i].bids[resultArray[i].bids.length - 1].amount;
+    }
     // Creates template for each result
     const listingClone = document.importNode(listingTemplate, true);
     if (media[0]) {
@@ -48,7 +51,7 @@ async function createAllListings(sortUrl = "") {
       continue;
     }
     if (!amount) {
-      listingClone.querySelector("#listingAmount").innerText = `${"No bid"}`;
+      listingClone.querySelector("#listingAmount").innerText = `${"No bids"}`;
     } else {
       listingClone.querySelector("#listingAmount").innerText = `${amount}`;
     }
@@ -59,6 +62,8 @@ async function createAllListings(sortUrl = "") {
     // finally appending the child
     listingGrid.appendChild(listingClone);
   }
+
+  //   Hover
   document.querySelectorAll(".listing-card").forEach((item) => {
     item.addEventListener("mouseover", (event) => {
       item.firstElementChild.style.transform = "translateY(65px)";
@@ -87,32 +92,34 @@ async function createAllListings(sortUrl = "") {
       for (let i = 0; i < 32; i++) {
         // Destructuring each result from loop from ned array
         const {
-          bids: { amount },
           seller: { name },
           description,
           title,
           media,
           id,
-          _count: { bids },
           endsAt,
         } = filteredListings[i];
         // Building the template
-        console.log(description);
-        const listingClone = document.importNode(listingTemplate, true);
-        if (media[0]) {
-          listingClone.querySelector("#listingMedia").style.backgroundImage = `url(${media[0]})`;
-        } else {
-          eachPage = eachPage + 1;
-          continue;
+        let amount;
+        if (resultArray[i].bids.length > 0) {
+          amount = resultArray[i].bids[resultArray[i].bids.length - 1].amount;
         }
+        // Creates template for each result
+        const listingClone = document.importNode(listingTemplate, true);
         if (!amount) {
-          listingClone.querySelector("#listingAmount").innerText = `${0}`;
+          listingClone.querySelector("#listingAmount").innerText = `${"No bids"}`;
         } else {
           listingClone.querySelector("#listingAmount").innerText = `${amount}`;
         }
         listingClone.querySelector("#listingTitle").innerText = `${title}`;
         listingClone.querySelector("#listingSeller").innerText = `${name}`;
         listingClone.querySelector("#listingEnds").innerText = `${endsAt}`;
+        if (media[0]) {
+          listingClone.querySelector("#listingMedia").style.backgroundImage = `url(${media[0]})`;
+        } else {
+          eachPage = eachPage + 1;
+          continue;
+        }
 
         // finally appending the child
         listingGrid.appendChild(listingClone);
@@ -128,7 +135,6 @@ function pagination() {
   const back = document.querySelector("#arrowBack");
 
   back.style.display = "none";
-  //   pageTot.innerText = Math.ceil(resultArray.length / 32);
 
   next.addEventListener("click", () => {
     page++;
@@ -137,14 +143,12 @@ function pagination() {
     if (page != 0) {
       back.style.display = "flex";
     }
+    if (page + 1 == pageTot.innerText) {
+      next.style.display = "none";
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
     // pageOf.innerText = page + 1;
   });
-
-  //
-  //
-
-  //
 
   back.addEventListener("click", () => {
     page--;
@@ -158,6 +162,7 @@ function pagination() {
     } else {
       back.style.display = "none";
     }
+    next.style.display = "flex";
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
