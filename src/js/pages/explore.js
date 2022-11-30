@@ -2,12 +2,17 @@
 import { createStandardHeader } from "../headers/headers.js";
 import { toggleMenu } from "../ui/nav/toggleMenu.js";
 import { standardFetch } from "../fetch/fetch.js";
+import { formatDate } from "../utils/formatDate.js";
+import { getCreditAmount } from "../ui/getCreditAmount.js";
+import { hideShowLi } from "../ui/hideShowLi.js";
 
 // import constants
 import { baseUrl, allListingsUrl, sellerFlag, searchListings, pageOf, pageTot } from "../data/constants.js";
 
 // initiate
 toggleMenu();
+getCreditAmount();
+hideShowLi();
 
 // constants
 const listingGrid = document.querySelector("#listingGrid");
@@ -19,7 +24,6 @@ let page = 0;
 
 async function createAllListings(sortUrl = "") {
   const resultArray = await standardFetch(baseUrl + allListingsUrl + sellerFlag + sortUrl, createStandardHeader());
-  console.log(resultArray);
   listingGrid.innerHTML = "";
 
   // pagination
@@ -37,6 +41,7 @@ async function createAllListings(sortUrl = "") {
       media,
       endsAt,
     } = resultArray[i];
+
     // finding highest bid
     let amount;
     if (resultArray[i].bids.length > 0) {
@@ -57,7 +62,7 @@ async function createAllListings(sortUrl = "") {
     }
     listingClone.querySelector("#listingTitle").innerText = `${title}`;
     listingClone.querySelector("#listingSeller").innerText = `${name}`;
-    listingClone.querySelector("#listingEnds").innerText = `${endsAt}`;
+    listingClone.querySelector("#listingEnds").innerText = `${formatDate(endsAt)}`;
 
     // finally appending the child
     listingGrid.appendChild(listingClone);

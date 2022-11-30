@@ -3,7 +3,7 @@ import { toggleMenu } from "../ui/nav/toggleMenu.js";
 import { createLoginValues } from "../utils/loginValues.js";
 
 // import constants
-import { baseUrl, registerUrl, loginUrl } from "../data/constants.js";
+import { baseUrl, registerUrl, loginUrl, form, name, email, password, repeatPassword, formError } from "../data/constants.js";
 import { standardFetch, loginFetch } from "../fetch/fetch.js";
 import { createHeaderWithInputs } from "../headers/headers.js";
 
@@ -11,13 +11,6 @@ import { createHeaderWithInputs } from "../headers/headers.js";
 toggleMenu();
 
 // Validation
-const form = document.querySelector("#registerForm");
-const name = document.querySelector("#name");
-const email = document.querySelector("#email");
-const password = document.querySelector("#password");
-const repeatPassword = document.querySelector("#repeatPassword");
-const formError = document.querySelector("#formError");
-
 function illustrateValidation(element) {
   element.addEventListener("keyup", () => {
     element.classList.add("input-error");

@@ -25,12 +25,12 @@ export async function loginFetch(url, body) {
   const data = await response.json();
   console.log(data);
   if (response.ok) {
-    const accessToken = data.accessToken;
+    const { name, accessToken, credits } = data;
     localStorage.setItem("accessToken", accessToken);
-    const username = data.name;
-    localStorage.setItem("username", username);
+    localStorage.setItem("usernameGavelbay", name);
+    localStorage.setItem("credits", credits);
     window.location.href = "../../../dist/index.html";
     return data;
   }
-  throw new Error(data.message);
+  throw new Error(data.errors[0].message);
 }
