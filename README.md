@@ -1,3 +1,13 @@
+# Semester Project 2nd Year - Gavelbay
+
+## Introduction
+
+This is my semester project for 2nd year at Noroff Front-end development.
+We were given the task to create an auction website from start to finish with design and theme of own choice - over the course of 5 weeks.
+For market relevance, I decided to create an NFT auction website.
+
+## Requirements
+
 ## Frameworks
 
 ### Tailwindcss

@@ -24,6 +24,9 @@ module.exports = {
       backgroundImage: {
         'hero-pattern': "url('/dist/assets/bg.jpg')",
         'header-image': "url('/dist/assets/header.jpg')",
+      },
+      gridTemplateColumns: {
+        "profile": "0.5fr, 1fr",
       }
     },
   },

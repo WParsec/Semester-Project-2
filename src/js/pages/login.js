@@ -31,9 +31,3 @@ function loginSubmit(event) {
 
 // addEventListener on submit of loginForm
 loginForm.addEventListener("submit", loginSubmit);
-
-function logOut() {
-  localStorage.removeItem("accessToken");
-  localStorage.removeItem("usernameGavelbay");
-}
-logOut();
