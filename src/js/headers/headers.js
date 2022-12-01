@@ -1,5 +1,13 @@
 // Get all listings
-export function createStandardHeader() {
+export function createStandardHeader(accessToken) {
+  if (accessToken) {
+    return {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    };
+  }
   return {
     method: "GET",
     headers: {
@@ -8,13 +16,25 @@ export function createStandardHeader() {
   };
 }
 
-// Get all listings
+// POST with inputs
 export function createHeaderWithInputs(values) {
   return {
     method: "POST",
     body: JSON.stringify({ ...values }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
+    },
+  };
+}
+
+// PUT change avatar
+export function editProfile(values, accessToken) {
+  return {
+    method: "PUT",
+    body: JSON.stringify({ ...values }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${accessToken}`,
     },
   };
 }

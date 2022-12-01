@@ -4,6 +4,8 @@ export const allListingsUrl = "/auction/listings";
 export const sellerFlag = "?_seller=true&_bids=true";
 export const registerUrl = "/auction/auth/register";
 export const loginUrl = "/auction/auth/login";
+export const profileUrl = "/auction/profiles/";
+export const listingsFlag = "?_listings=true";
 
 // --------------- DOM --------------- //
 
@@ -11,6 +13,11 @@ export const loginUrl = "/auction/auth/login";
 export const searchListings = document.querySelector("#searchListings");
 export const pageOf = document.querySelector("#pageOf");
 export const pageTot = document.querySelector("#pageTot");
+
+// Profile
+export const logOutButton = document.querySelector("#logOutButton");
+export const editAvatarButton = document.querySelector("#editAvatarButton");
+export const profileUsername = document.querySelector("#profileUsername");
 
 // Register & login
 export const form = document.querySelector("#registerForm");
