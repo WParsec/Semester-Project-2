@@ -68,16 +68,6 @@ async function createAllListings(sortUrl = "") {
     listingGrid.appendChild(listingClone);
   }
 
-  //   Hover
-  document.querySelectorAll(".listing-card").forEach((item) => {
-    item.addEventListener("mouseover", (event) => {
-      item.firstElementChild.style.transform = "translateY(65px)";
-    });
-    item.addEventListener("mouseout", (event) => {
-      item.firstElementChild.style.transform = "translateY(0px)";
-    });
-  });
-
   /**
    * Function for searching listing
    */

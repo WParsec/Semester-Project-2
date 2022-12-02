@@ -49,84 +49,84 @@
             </div>
         </section>
         <section class="container m-auto max-w-6xl mt-16 mb-8 px-5 lg:px-0">
-                <div class="flex justify-center flex-col">
-                  <form method="POST" action="" id="registerForm" class="flex flex-col gap-4 w-full max-w-md m-auto transition-all">
-                    <!-- Form Username -->
-                    <div class="flex flex-col">
-                    <label for="name">Username</label>
-                      <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
-                        id="name"
-                        title="Username must not contain punctuation symbols apart from underscore (_)."
-                        type="text"
-                        name="name"
-                        placeholder="Username"
-                        minlength="3"
-                        maxlength="30"
-                        pattern="^[\w]+$"
-                        required/>
-                      <div class="form-error" id="usernameError"></div>
-                    </div>
-
-                    <!-- Form Email -->
-                    <div class="flex flex-col">
-                    <label for="email">Email</label>
-                      <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
-                        type="email"
-                        id="email"
-                        title="The email value must be a valid stud.noroff.no or noroff.no email address."
-                        minlength="8"
-                        maxlength="40"
-                        class="form-control"
-                        name="email"
-                        placeholder="Email address"
-                        pattern="^[\w\-.]+@(stud.)?noroff.no$"
-                        required
-                      />
-                      <div class="form-error" id="emailError"></div>
-                    </div>
-
-                    <!-- Form Password -->
-                    <div class="flex flex-col">
-                    <label for="password">Password</label>
-                      <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
-                        type="password"
-                        id="password"
-                        title="The password value must be at least 8 characters."
-                        minlength="8"
-                        maxlength="20"
-                        class="form-control"
-                        name="password"
-                        placeholder="Your password"
-                        required/>
-                    </div>
-
-                    <!-- Repeat password -->
-                    <div class="flex flex-col">
-                        <label for="repeatPassword">Repeat password</label>
-                          <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
-                            type="password"
-                            id="repeatPassword"
-                            minlength="8"
-                            maxlength="20"
-                            class="form-control"
-                            name="repeatPassword"
-                            placeholder="Your password"
-                            required/>
-                        </div>
-
-                    <!-- Error box -->
-                    <div>
-                        <p id="formError" class="text-warning"></p>
-                    </div>
-
-                    <!-- Form Button -->
-                    <button type="submit" class="cta text-dark duration-400 px-7 py-3 mt-4 rounded-md shadow-lg hover:scale-110 max-w-md">Register</button>
-                  </form>
-                  <div class="m-auto flex mt-8 gap-4 items-center">
-                    <p>Already have an account?</p>
-                    <a class="font-bold text-warning" href="../login/index.html">Login</a>
-                  </div>
+          <div class="flex justify-center flex-col">
+            <form method="POST" action="" id="registerForm" class="flex flex-col gap-4 w-full max-w-md m-auto transition-all">
+              <!-- Form Username -->
+              <div class="flex flex-col">
+              <label for="name">Username</label>
+                <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
+                  id="name"
+                  title="Username must not contain punctuation symbols apart from underscore (_)."
+                  type="text"
+                  name="name"
+                  placeholder="Username"
+                  minlength="3"
+                  maxlength="30"
+                  pattern="^[\w]+$"
+                  required/>
+                <div class="form-error" id="usernameError"></div>
               </div>
+
+              <!-- Form Email -->
+              <div class="flex flex-col">
+              <label for="email">Email</label>
+                <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
+                  type="email"
+                  id="email"
+                  title="The email value must be a valid stud.noroff.no or noroff.no email address."
+                  minlength="8"
+                  maxlength="40"
+                  class="form-control"
+                  name="email"
+                  placeholder="Email address"
+                  pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                  required
+                />
+                <div class="form-error" id="emailError"></div>
+              </div>
+
+              <!-- Form Password -->
+              <div class="flex flex-col">
+              <label for="password">Password</label>
+                <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
+                  type="password"
+                  id="password"
+                  title="The password value must be at least 8 characters."
+                  minlength="8"
+                  maxlength="20"
+                  class="form-control"
+                  name="password"
+                  placeholder="Your password"
+                  required/>
+              </div>
+
+              <!-- Repeat password -->
+              <div class="flex flex-col">
+                  <label for="repeatPassword">Repeat password</label>
+                    <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
+                      type="password"
+                      id="repeatPassword"
+                      minlength="8"
+                      maxlength="20"
+                      class="form-control"
+                      name="repeatPassword"
+                      placeholder="Your password"
+                      required/>
+                  </div>
+
+              <!-- Error box -->
+              <div>
+                  <p id="formError" class="text-warning"></p>
+              </div>
+
+              <!-- Form Button -->
+              <button type="submit" class="cta text-dark duration-400 px-7 py-3 mt-4 rounded-md shadow-lg hover:scale-110 max-w-md transition-all">Register</button>
+            </form>
+            <div class="m-auto flex mt-8 gap-4 items-center">
+              <p>Already have an account?</p>
+              <a class="font-bold text-warning" href="../login/index.html">Login</a>
+            </div>
+          </div>
         </section>
     </main>
 </body>

@@ -602,16 +602,20 @@ html {
   margin-top: 1rem;
 }
 
+.mb-12{
+  margin-bottom: 3rem;
+}
+
 .mt-16{
   margin-top: 4rem;
 }
 
-.mb-4{
-  margin-bottom: 1rem;
-}
-
 .mt-2{
   margin-top: 0.5rem;
+}
+
+.mb-4{
+  margin-bottom: 1rem;
 }
 
 .block{
@@ -650,37 +654,12 @@ html {
   height: 3.5rem;
 }
 
-.h-10{
-  height: 2.5rem;
-}
-
-.h-auto{
-  height: auto;
-}
-
-.h-24{
-  height: 6rem;
-}
-
-.h-80{
-  height: 20rem;
-}
-
-.h-72{
-  height: 18rem;
-}
-
-.h-60{
-  height: 15rem;
+.h-16{
+  height: 4rem;
 }
 
 .h-48{
   height: 12rem;
-}
-
-.max-h-fit{
-  max-height: -moz-fit-content;
-  max-height: fit-content;
 }
 
 .w-full{
@@ -689,6 +668,10 @@ html {
 
 .w-14{
   width: 3.5rem;
+}
+
+.w-16{
+  width: 4rem;
 }
 
 .w-48{
@@ -709,10 +692,6 @@ html {
 
 .rotate-180{
   --tw-rotate: 180deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -782,6 +761,10 @@ html {
 
 .rounded-full{
   border-radius: 9999px;
+}
+
+.rounded-xl{
+  border-radius: 0.75rem;
 }
 
 .rounded-br-lg{
@@ -905,6 +888,10 @@ html {
   padding-left: 0.75rem;
 }
 
+.pb-16{
+  padding-bottom: 4rem;
+}
+
 .pb-2{
   padding-bottom: 0.5rem;
 }
@@ -922,11 +909,6 @@ html {
   line-height: 1.75rem;
 }
 
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -942,14 +924,19 @@ html {
   line-height: 1.5rem;
 }
 
-.text-4xl{
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .font-bold{
@@ -1042,6 +1029,7 @@ body {
 main {
   background-image: url(/dist/assets/bg.jpg);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .show {
@@ -1077,6 +1065,11 @@ main {
 .listing-card:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   cursor: pointer;
+}
+
+.listing-card:hover #listingLabel {
+  transform: translateY(65px);
+  transition: 300ms;
 }
 
 .listing-label {
@@ -1122,6 +1115,12 @@ main {
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:shadow-2xl:hover{
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .focus\:shadow-xl:focus{
@@ -1243,6 +1242,11 @@ main {
   .md\:text-4xl{
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .md\:tracking-widest{

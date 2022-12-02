@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GavelBay | New Listing</title>
+    <link rel="stylesheet" href="../output.css">
+    <script defer type="module" src="../../src/js/pages/newListing.js"></script>
+</head>
+<body class="bg-white font-sans">
+    <header>
+        <nav class="p-5 shadow-xl">
+            <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
+              <div class="flex justify-between items-center ">
+                <span class="cursor-pointer">
+                  <img class="h-7 md:h-9" src="/dist/assets/logo.png" alt="Gavelbay logo">
+                </span>
+                <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
+                  <div>Menu</div>
+                </span>
+              </div>
+              <ul id="menu" class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full">
+                <li class="mt-10 md:m-0">
+                  <a href="/dist/index.html" class="active pt-10 px-10 sm:p-3">Explore</a>
+                </li>
+                <li id="liLogin" class="">
+                  <a href="../login/index.html" class="p-3">Login</a>
+                </li>
+                <li id="liNewListing" class="hidden">
+                  <a href="#" class="p-3">New Listing</a>
+                </li>
+                <li id="liAccount" class="hidden">
+                  <a href="../profile/index.html" class="p-3">Account</a>
+                </li>
+                <li id="liRegister">
+                  <a href="../register/index.html" class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all">
+                    Register
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <section class="container m-auto max-w-6xl mt-8 px-5 lg:px-0">
+            <div class="">
+                <div class="flex w-full border-b border-soft">
+                    <a href="../index.html" class="text-dark text-center tracking-widest md:text-left lg:pl-0">Back</a>
+                </div>
+            </div>
+        </section>
+        <section class="m-auto py-20 relative">
+            <div class="container w-full m-auto px-5 overflow-hidden max-w-6xl lg:px-0">
+                <div class="flex justify-center flex-col pb-16">
+                    <h1 class="text-2xl md:text-4xl tracking-widest text-center mb-12">CREATE LISTING</h1>
+                    <div class="flex justify-center flex-col">
+                        <form method="POST" action="" id="registerForm" class="flex flex-col gap-4 w-full max-w-md m-auto transition-all">
+                          <!-- Form Username -->
+                          <div class="flex flex-col">
+                          <label for="name">Title</label>
+                            <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
+                              id="title"
+                              title="Title must be less than 20 characters and can not contain punctuation symbols apart from underscore (_)."
+                              type="text"
+                              name="title"
+                              placeholder="Username"
+                              minlength="3"
+                              maxlength="20"
+                              pattern="^[\w]+$"
+                              required/>
+                          </div>
+      
+                          <!-- Form Media -->
+                          <div class="flex flex-col">
+                            <label for="media">Media Link</label>
+                              <div class="flex items-center">
+                                <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 w-full"
+                                type="text"
+                                id="media"
+                                title="Must be an image URL"
+                                minlength="8"
+                                name="media"
+                                placeholder="www.unsplash.com/image/cat"
+                                required/>
+                                <div class="text-xl p-4 cursor-pointer" tabindex="0" id="addMedia">⨁</div>
+                            </div>
+                          </div>
+                          <!-- Added media -->
+                          <div id="addedMediaWrap" class="flex">
+                            <div class="flex flex-col gap-2 items-center">
+                                <div class="h-16 w-16 flex rounded-xl overflow-hidden"><img src="../assets/header.jpg" alt=""></div>
+                                <button class="text-warning">Remove</button>
+                            </div>
+                          </div>
+
+                          <!-- Tags -->
+                          <div class="flex flex-col">
+                            <label for="media">Tags - Separate by comma ( , )</label>
+                              <div class="flex items-center">
+                                <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 w-full"
+                                type="text"
+                                id="media"
+                                title="Must be an image URL"
+                                minlength="8"
+                                name="media"
+                                placeholder="cat, cute, nft"/>
+                                <div class="text-xl p-4 cursor-pointer" tabindex="0" id="addMedia">⨁</div>
+                            </div>
+                          </div>
+
+                          <!-- Description -->
+                          <div class="flex flex-col">
+                            <label for="description">Description</label>
+                            <textarea class="p-3 rounded-md shadow-md focus:outline-none focus:shadow-xl"
+                            id="description"
+                            name="body"
+                            placeholder="My first NFT"
+                            rows="5"
+                            minlength="3"
+                            maxlength="300"></textarea>
+                          </div>
+
+                          <!-- Ends at -->
+                          <div class="flex flex-col">
+                            <label for="description">Ends at:</label>
+                            <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 w-full"
+                                type="datetime-local"
+                                id="media"
+                                title="Must be an image URL"
+                                minlength="8"
+                                name="media"
+                                placeholder="cat, cute, nft"/>
+                          </div>
+
+                          <!-- Error box -->
+                          <div class="hidden">
+                            <p id="formError" class="text-warning"></p>
+                        </div>
+      
+                          <!-- Form Button -->
+                          <button type="submit" class="cta text-dark duration-400 mt-4 px-7 py-3 rounded-md shadow-lg hover:scale-110 max-w-md transition-all">Create Listing</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>

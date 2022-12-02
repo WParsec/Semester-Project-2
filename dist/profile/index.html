@@ -4,36 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GavelBay | Login</title>
+    <title>GavelBay | Profile</title>
     <link rel="stylesheet" href="../output.css">
     <script defer type="module" src="/src/js/pages/profile.js"></script>
 </head>
 <body class="bg-white font-sans">
-    <div id="modal" class="modal hidden px-5">
-        <div class="modal-content bg-white p-4 rounded-md w-full max-w-md">
-            <div class="modal-header flex justify-between items-center mb-4">
-                <h2 class="text-xl font-medium">Edit avatar</h2>
-                <span id="modalClose" class="text-4xl p-2 cursor-pointer">☠</span>
-            </div>
-            <label for="avatar">Avatar URL</label>
-            <form method="PUT" action="" id="editAvatarForm" class="w-full max-w-md m-auto transition-all">
-                <!-- Form Email -->
-                <div class="flex flex-col gap-8">
-                  <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
-                    type="text"
-                    id="avatar"
-                    title="Must be an image URL"
-                    minlength="8"
-                    name="avatar"
-                    placeholder="www.unsplash.com/image/cat"
-                    required
-                  />
-                  <div class="form-error" id="emailError"></div>
-                </div>
-                <button class="cta text-dark duration-400 py-3 rounded-md shadow-lg hover:scale-110 transition-all w-full">Submit</button>
-            </form>
-        </div>
-    </div>
     <header>
         <nav class="p-5 shadow-xl">
             <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
@@ -53,7 +28,7 @@
                   <a href="../login/index.html" class="p-3">Login</a>
                 </li>
                 <li id="liNewListing" class="hidden">
-                  <a href="#" class="p-3">New Listing</a>
+                  <a href="../create/index.html" class="p-3">New Listing</a>
                 </li>
                 <li id="liAccount" class="hidden">
                   <a href="../profile/index.html" class="p-3">Account</a>
@@ -71,7 +46,7 @@
         <section class="container m-auto max-w-6xl mt-8 px-5 lg:px-0">
             <div class="">
                 <div class="flex w-full border-b border-soft">
-                    <h1 class="text-dark text-center font-bold text-3xl tracking-widest md:text-left lg:pl-0">Profile</h2>
+                    <h1 class="text-xl md:text-3xl tracking-widest lg:pl-0">Profile</h2>
                 </div>
             </div>
         </section>
@@ -94,6 +69,31 @@
                 </div>
             </div>
         </section>
+        <div id="modal" class="modal hidden px-5">
+            <div class="modal-content bg-white p-4 rounded-md w-full max-w-md" aria-modal="true">
+                <div class="modal-header flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-medium">Edit avatar</h2>
+                    <button id="modalClose" class="text-4xl p-2 cursor-pointer" tabindex="0" aria-label="close">☠</button>
+                </div>
+                <label for="avatar">Avatar URL</label>
+                <form method="PUT" action="" id="editAvatarForm" class="w-full max-w-md m-auto transition-all">
+                    <!-- Form Url -->
+                    <div class="flex flex-col gap-8">
+                      <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
+                        type="text"
+                        id="avatar"
+                        title="Must be an image URL"
+                        minlength="8"
+                        name="avatar"
+                        placeholder="www.unsplash.com/image/cat"
+                        aria-errormessage="mediaError"
+                        required/>
+                      <div class="text-warning" id="mediaError"></div>
+                    </div>
+                    <button class="cta text-dark duration-400 py-3 rounded-md shadow-lg hover:shadow-2xl transition-all w-full">Submit</button>
+                </form>
+            </div>
+        </div>
         <section class="container m-auto max-w-6xl px-5 lg:px-0">
             <div class="">
                 <div class="flex w-full border-b border-soft">

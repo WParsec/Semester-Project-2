@@ -19,6 +19,7 @@ body {
 main {
   background-image: url(/dist/assets/bg.jpg);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .show {
@@ -54,6 +55,11 @@ main {
 .listing-card:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   cursor: pointer;
+}
+
+.listing-card:hover #listingLabel {
+  transform: translateY(65px);
+  transition: 300ms;
 }
 
 .listing-label {

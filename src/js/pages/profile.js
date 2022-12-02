@@ -56,7 +56,7 @@ async function createProfile() {
 createProfile();
 
 /**
- * Fetch to change avatar image on submit event of form
+ * Fetch to change avatar image on submit of form
  */
 document.querySelector("#editAvatarForm").addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -64,6 +64,12 @@ document.querySelector("#editAvatarForm").addEventListener("submit", async (even
   const values = Object.fromEntries(data.entries());
   const name = localStorage.getItem("usernameGavelbay");
   const accessToken = localStorage.getItem("accessToken");
-  await standardFetch(baseUrl + profileUrl + name + "/media", editProfile(values, accessToken));
-  location.reload();
+  const errorDiv = document.querySelector("#mediaError");
+  try {
+    await standardFetch(baseUrl + profileUrl + name + "/media", editProfile(values, accessToken));
+    location.reload();
+  } catch (e) {
+    errorDiv.innerText = e;
+    document.querySelector("#avatar").setAttribute("aria-invalid", true);
+  }
 });
