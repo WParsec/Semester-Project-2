@@ -55,26 +55,26 @@
                 <div class="flex justify-center flex-col pb-16">
                     <h1 class="text-2xl md:text-4xl tracking-widest text-center mb-12">CREATE LISTING</h1>
                     <div class="flex justify-center flex-col">
-                        <form method="POST" action="" id="registerForm" class="flex flex-col gap-4 w-full max-w-md m-auto transition-all">
+                        <form method="POST" action="" id="createListingForm" class="flex flex-col w-full max-w-md m-auto transition-all">
                           <!-- Form Username -->
-                          <div class="flex flex-col">
+                          <div class="flex flex-col mb-4">
                           <label for="name">Title</label>
                             <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
                               id="title"
                               title="Title must be less than 20 characters and can not contain punctuation symbols apart from underscore (_)."
                               type="text"
                               name="title"
-                              placeholder="Username"
+                              placeholder="Grumpy Garfield's"
                               minlength="3"
                               maxlength="20"
-                              pattern="^[\w]+$"
+                              pattern="^[\w0-9' ]+$"
                               required/>
                           </div>
       
                           <!-- Form Media -->
-                          <div class="flex flex-col">
+                          <div class="flex flex-col mb-4">
                             <label for="media">Media Link</label>
-                              <div class="flex items-center">
+                              <div class="flex items-center">                           
                                 <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 w-full"
                                 type="text"
                                 id="media"
@@ -83,19 +83,24 @@
                                 name="media"
                                 placeholder="www.unsplash.com/image/cat"
                                 required/>
-                                <div class="text-xl p-4 cursor-pointer" tabindex="0" id="addMedia">⨁</div>
+                                <button class="text-xl p-4 cursor-pointer" tabindex="0" id="addMedia">⨁</button>
                             </div>
                           </div>
                           <!-- Added media -->
-                          <div id="addedMediaWrap" class="flex">
-                            <div class="flex flex-col gap-2 items-center">
-                                <div class="h-16 w-16 flex rounded-xl overflow-hidden"><img src="../assets/header.jpg" alt=""></div>
-                                <button class="text-warning">Remove</button>
+                          <div id="previewMediaContainer" class="flex">
+                            <div id="previewFlexContainer" class="flex gap-4">
+                                <template id="previewMediaTemplate">
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div id="previewMediaDiv" class="h-16 w-16 flex rounded-xl overflow-hidden"><img src="../assets/image-error.png" alt=""></div>
+                                        <button id="removeMediaButton" class="text-warning">Remove</button>
+                                    </div>
+                                </template>
                             </div>
                           </div>
+                          <p id="mediaError" class="text-warning"></p>
 
                           <!-- Tags -->
-                          <div class="flex flex-col">
+                          <div class="flex flex-col mb-4">
                             <label for="media">Tags - Separate by comma ( , )</label>
                               <div class="flex items-center">
                                 <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 w-full"
@@ -105,12 +110,12 @@
                                 minlength="8"
                                 name="media"
                                 placeholder="cat, cute, nft"/>
-                                <div class="text-xl p-4 cursor-pointer" tabindex="0" id="addMedia">⨁</div>
+                                <button class="text-xl p-4 cursor-pointer" tabindex="0" id="addTags">⨁</button>
                             </div>
                           </div>
 
                           <!-- Description -->
-                          <div class="flex flex-col">
+                          <div class="flex flex-col mb-4">
                             <label for="description">Description</label>
                             <textarea class="p-3 rounded-md shadow-md focus:outline-none focus:shadow-xl"
                             id="description"
@@ -122,7 +127,7 @@
                           </div>
 
                           <!-- Ends at -->
-                          <div class="flex flex-col">
+                          <div class="flex flex-col mb-4">
                             <label for="description">Ends at:</label>
                             <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 w-full"
                                 type="datetime-local"

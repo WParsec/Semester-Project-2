@@ -678,6 +678,10 @@ html {
   width: 12rem;
 }
 
+.w-9{
+  width: 2.25rem;
+}
+
 .max-w-6xl{
   max-width: 72rem;
 }

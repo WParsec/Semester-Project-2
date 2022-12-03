@@ -9,7 +9,7 @@
     "watch": "tailwind build -i src/style.css -o dist/output.css --watch",
     "format": "prettier -w src/**/*.{js,html,css}",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "lint-fix": "eslint src/**/*.js --fix",
     "prepare": "husky install"
   },
   "author": "Tom Erik William Ertvaag",
@@ -23,6 +23,6 @@
   },
   "lint-staged": {
     "*.{js,html,css}": "prettier --write",
-    "*.js": "eslint --cache --fix"
+    "*.js": "eslint --fix"
   }
 }
