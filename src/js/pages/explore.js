@@ -8,17 +8,16 @@ import { hideShowLi } from "../ui/hideShowLi.js";
 import { runSort } from "../ui/sort.js";
 
 // import constants
-import { baseUrl, allListingsUrl, sellerFlag, searchListings, pageOf, pageTot } from "../data/constants.js";
+import { baseUrl, allListingsUrl, sellerFlag, searchListings, pageOf, pageTot, listingGrid } from "../data/constants.js";
 
 // constants
-const listingGrid = document.querySelector("#listingGrid");
 const listingTemplate = document.querySelector("#listingTemplate").content;
 
 // initiate
 toggleMenu();
 getCreditAmount();
 hideShowLi();
-runSort(listingGrid);
+runSort();
 
 // page
 let pageStart = 0;
@@ -30,9 +29,9 @@ export async function createAllListings(sortUrl = "?sort=created&sortOrder=asc")
   listingGrid.innerHTML = "";
 
   // pagination
-  let eachPage = 32;
+  let eachPage = 64;
   pageOf.innerText = page + 1 + " ";
-  pageTot.innerText = " " + Math.ceil(resultArray.length / 32) + " ";
+  pageTot.innerText = " " + Math.ceil(resultArray.length / eachPage) + " ";
 
   // loop
   for (let i = pageStart; i < pageStart + eachPage; i++) {

@@ -13,6 +13,7 @@ export const listingsFlag = "?_listings=true";
 export const searchListings = document.querySelector("#searchListings");
 export const pageOf = document.querySelector("#pageOf");
 export const pageTot = document.querySelector("#pageTot");
+export const listingGrid = document.querySelector("#listingGrid");
 
 // Profile
 export const logOutButton = document.querySelector("#logOutButton");
