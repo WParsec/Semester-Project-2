@@ -5,6 +5,7 @@ import { standardFetch } from "../fetch/fetch.js";
 import { formatDate } from "../utils/formatDate.js";
 import { getCreditAmount } from "../ui/getCreditAmount.js";
 import { hideShowLi } from "../ui/hideShowLi.js";
+import { runSort } from "../ui/sort.js";
 
 // import constants
 import { baseUrl, allListingsUrl, sellerFlag, searchListings, pageOf, pageTot } from "../data/constants.js";
@@ -13,6 +14,7 @@ import { baseUrl, allListingsUrl, sellerFlag, searchListings, pageOf, pageTot } 
 toggleMenu();
 getCreditAmount();
 hideShowLi();
+runSort();
 
 // constants
 const listingGrid = document.querySelector("#listingGrid");
@@ -22,8 +24,9 @@ const listingTemplate = document.querySelector("#listingTemplate").content;
 let pageStart = 0;
 let page = 0;
 
-async function createAllListings(sortUrl = "") {
+export async function createAllListings(sortUrl = "?sort=created&sortOrder=asc") {
   const resultArray = await standardFetch(baseUrl + allListingsUrl + sellerFlag + sortUrl, createStandardHeader());
+  console.log(baseUrl + allListingsUrl + sellerFlag + sortUrl);
   listingGrid.innerHTML = "";
 
   // pagination
@@ -44,7 +47,7 @@ async function createAllListings(sortUrl = "") {
 
     // finding highest bid
     let amount;
-    if (resultArray[i].bids.length > 0) {
+    if (resultArray[i]._count.bids.length > 0) {
       amount = resultArray[i].bids[resultArray[i].bids.length - 1].amount;
     }
     // Creates template for each result
@@ -84,7 +87,7 @@ async function createAllListings(sortUrl = "") {
           return array;
         }
       });
-      for (let i = 0; i < 32; i++) {
+      for (let i = 0; i < filteredListings.length; i++) {
         // Destructuring each result from loop from ned array
         const {
           seller: { name },
@@ -96,7 +99,7 @@ async function createAllListings(sortUrl = "") {
         } = filteredListings[i];
         // Building the template
         let amount;
-        if (resultArray[i].bids.length > 0) {
+        if (resultArray[i]._count.bids.length > 0) {
           amount = resultArray[i].bids[resultArray[i].bids.length - 1].amount;
         }
         // Creates template for each result
@@ -108,7 +111,7 @@ async function createAllListings(sortUrl = "") {
         }
         listingClone.querySelector("#listingTitle").innerText = `${title}`;
         listingClone.querySelector("#listingSeller").innerText = `${name}`;
-        listingClone.querySelector("#listingEnds").innerText = `${endsAt}`;
+        listingClone.querySelector("#listingEnds").innerText = `${formatDate(endsAt)}`;
         if (media[0]) {
           listingClone.querySelector("#listingMedia").style.backgroundImage = `url(${media[0]})`;
         } else {
