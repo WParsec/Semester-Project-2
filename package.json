@@ -8,8 +8,8 @@
     "build": "tailwind build -i src/style.css -o dist/output.css",
     "watch": "tailwind build -i src/style.css -o dist/output.css --watch",
     "format": "prettier -w src/**/*.{js,html,css}",
-    "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --fix",
+    "lint": "eslint src/js/**/*.js",
+    "lint-fix": "eslint src/js/**/*.js --fix",
     "prepare": "husky install"
   },
   "author": "Tom Erik William Ertvaag",

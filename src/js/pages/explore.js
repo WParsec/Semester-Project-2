@@ -10,15 +10,15 @@ import { runSort } from "../ui/sort.js";
 // import constants
 import { baseUrl, allListingsUrl, sellerFlag, searchListings, pageOf, pageTot } from "../data/constants.js";
 
+// constants
+const listingGrid = document.querySelector("#listingGrid");
+const listingTemplate = document.querySelector("#listingTemplate").content;
+
 // initiate
 toggleMenu();
 getCreditAmount();
 hideShowLi();
-runSort();
-
-// constants
-const listingGrid = document.querySelector("#listingGrid");
-const listingTemplate = document.querySelector("#listingTemplate").content;
+runSort(listingGrid);
 
 // page
 let pageStart = 0;
@@ -91,7 +91,6 @@ export async function createAllListings(sortUrl = "?sort=created&sortOrder=asc")
         // Destructuring each result from loop from ned array
         const {
           seller: { name },
-          description,
           title,
           media,
           id,

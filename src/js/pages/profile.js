@@ -16,8 +16,8 @@ function logOut() {
 }
 
 // Modals
+const modal = document.querySelector("#modal");
 function openModal() {
-  const modal = document.querySelector("#modal");
   modal.classList.remove("hidden");
   modal.classList.add("flex");
 }
