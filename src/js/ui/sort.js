@@ -8,8 +8,8 @@ export function runSort() {
   const sortCreated = document.querySelector("#sortCreated");
   const sortTitle = document.querySelector("#sortTitle");
   sortCreated.addEventListener("change", () => {
-    const createdAsc = "?sort=created&sortOrder=asc";
-    const createdDesc = "?sort=created&sortOrder=desc";
+    const createdAsc = "?_sort=created&sortOrder=asc";
+    const createdDesc = "?_sort=created&sortOrder=desc";
     switch (sortCreated.value) {
       case "Newest":
         listingGrid.innerHTML = "";
@@ -22,10 +22,8 @@ export function runSort() {
     }
   });
   sortTitle.addEventListener("change", () => {
-    const titleAsc = "?sort=title&sortOrder=asc";
-    const titleDesc = "?sort=title&sortOrder=desc";
-    console.log(sortTitle.value);
-
+    const titleAsc = "?_sort=title&sortOrder=asc";
+    const titleDesc = "?_sort=title&sortOrder=desc";
     switch (sortTitle.value) {
       case "alphabetical":
         listingGrid.innerHTML = "";

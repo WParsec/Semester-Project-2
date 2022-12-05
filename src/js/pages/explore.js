@@ -8,7 +8,7 @@ import { hideShowLi } from "../ui/hideShowLi.js";
 import { runSort } from "../ui/sort.js";
 
 // import constants
-import { baseUrl, allListingsUrl, sellerFlag, searchListings, pageOf, pageTot, listingGrid } from "../data/constants.js";
+import { baseUrl, allListingsUrl, sellerFlag, activeFlag, searchListings, pageOf, pageTot, listingGrid } from "../data/constants.js";
 
 // constants
 const listingTemplate = document.querySelector("#listingTemplate").content;
@@ -23,9 +23,9 @@ runSort();
 let pageStart = 0;
 let page = 0;
 
-export async function createAllListings(sortUrl = "?sort=created&sortOrder=asc") {
-  const resultArray = await standardFetch(baseUrl + allListingsUrl + sellerFlag + sortUrl, createStandardHeader());
-  console.log(baseUrl + allListingsUrl + sellerFlag + sortUrl);
+export async function createAllListings(sortUrl = "?_sort=created&sortOrder=asc") {
+  const resultArray = await standardFetch(baseUrl + allListingsUrl + sellerFlag + sortUrl + activeFlag, createStandardHeader());
+  console.log(baseUrl + allListingsUrl + sellerFlag + sortUrl + activeFlag);
   listingGrid.innerHTML = "";
 
   // pagination

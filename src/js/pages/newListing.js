@@ -8,28 +8,30 @@ hideShowLi();
 // Constants
 const addMediaButton = document.querySelector("#addMedia");
 const mediaInput = document.querySelector("#media");
-const previewMediaContainer = document.querySelector("#previewMediaContainer");
 const previewMediaTemplate = document.querySelector("#previewMediaTemplate").content;
 const previewFlexContainer = document.querySelector("#previewFlexContainer");
 const mediaError = document.querySelector("#mediaError");
-const mediaInputForm = document.querySelector("#mediaInputForm");
+
+const addTagsButton = document.querySelector("#addTags");
+const tagInput = document.querySelector("#tagInput");
+const previewTagsTemplate = document.querySelector("#previewTagsTemplate").content;
+const previewTagsContainer = document.querySelector("#previewTagsContainer");
 
 // declare mediaArray
 let mediaArray = [];
+let tagArray = [];
 
 function previewMedia() {
-  if (!mediaInput.value) {
+  if (mediaArray.length === 3) {
+    mediaError.innerText = "Maximum 3 images";
+    mediaInput.value = "";
     return;
   }
-  if (mediaArray.length === 4) {
-    mediaError.innerText = "Maximum 4 images";
-    return;
-  }
-  if (previewMediaContainer.className === "hidden") {
-    previewMediaContainer.className.replace("flex");
-  }
+
   let mediaUrl = mediaInput.value;
-  mediaArray.push(mediaUrl);
+  if (mediaUrl !== "") {
+    mediaArray.push(mediaUrl);
+  }
   console.log(mediaArray);
   previewFlexContainer.innerHTML = "";
   for (let i = 0; i < mediaArray.length; i++) {
@@ -41,20 +43,41 @@ function previewMedia() {
     removeButtons.forEach((button) => {
       button.addEventListener("click", () => {
         console.log(i);
-        removeMedia(i);
+        removeMedia(i, mediaArray, previewFlexContainer);
+      });
+    });
+    mediaInput.value = "";
+  }
+}
+
+function removeMedia(iteration, array, container) {
+  array.splice(iteration, 1);
+  container.innerHTML = "";
+  previewMedia();
+  previewTags();
+}
+
+function previewTags() {
+  if (tagInput.value !== "") {
+    tagArray.push(tagInput.value);
+  }
+  previewTagsContainer.innerHTML = "";
+  for (let i = 0; i < tagArray.length; i++) {
+    const tagClone = document.importNode(previewTagsTemplate, true);
+    const tagsPar = tagClone.querySelector("#previewTagsPar");
+    tagsPar.innerHTML = `${tagArray[i]}`;
+    previewTagsContainer.appendChild(tagClone);
+    // Remove buttons
+    const removeTags = document.querySelectorAll("#removeTagsButton");
+    removeTags.forEach((button) => {
+      button.addEventListener("click", () => {
+        removeMedia(i, tagArray, previewTagsContainer);
       });
     });
   }
+  tagInput.value = "";
 }
 
+// Eventlistener
 addMediaButton.addEventListener("click", previewMedia);
-
-function removeMedia(iteration) {
-  mediaArray.splice(iteration);
-  console.log(mediaArray);
-  previewMedia();
-  if (mediaArray.length === 0) {
-    previewMediaContainer.classList.remove("flex");
-    previewMediaContainer.classList.add("hidden");
-  }
-}
+addTagsButton.addEventListener("click", previewTags);

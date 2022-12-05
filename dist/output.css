@@ -606,16 +606,16 @@ html {
   margin-bottom: 3rem;
 }
 
+.mb-4{
+  margin-bottom: 1rem;
+}
+
 .mt-16{
   margin-top: 4rem;
 }
 
 .mt-2{
   margin-top: 0.5rem;
-}
-
-.mb-4{
-  margin-bottom: 1rem;
 }
 
 .block{
@@ -676,10 +676,6 @@ html {
 
 .w-48{
   width: 12rem;
-}
-
-.w-9{
-  width: 2.25rem;
 }
 
 .max-w-6xl{

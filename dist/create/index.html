@@ -58,13 +58,13 @@
                         <form method="POST" action="" id="createListingForm" class="flex flex-col w-full max-w-md m-auto transition-all">
                           <!-- Form Username -->
                           <div class="flex flex-col mb-4">
-                          <label for="name">Title</label>
+                          <label for="name">Title *</label>
                             <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
                               id="title"
                               title="Title must be less than 20 characters and can not contain punctuation symbols apart from underscore (_)."
                               type="text"
                               name="title"
-                              placeholder="Grumpy Garfield's"
+                              placeholder="Grumpy Garfields"
                               minlength="3"
                               maxlength="20"
                               pattern="^[\w0-9' ]+$"
@@ -73,7 +73,7 @@
       
                           <!-- Form Media -->
                           <div class="flex flex-col mb-4">
-                            <label for="media">Media Link</label>
+                            <label for="media">Media Link *</label>
                               <div class="flex items-center">                           
                                 <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 w-full"
                                 type="text"
@@ -82,12 +82,12 @@
                                 minlength="8"
                                 name="media"
                                 placeholder="www.unsplash.com/image/cat"
-                                required/>
+                                />
                                 <button class="text-xl p-4 cursor-pointer" tabindex="0" id="addMedia">⨁</button>
                             </div>
                           </div>
                           <!-- Added media -->
-                          <div id="previewMediaContainer" class="flex">
+                          <div class="flex">
                             <div id="previewFlexContainer" class="flex gap-4">
                                 <template id="previewMediaTemplate">
                                     <div class="flex flex-col items-center gap-2">
@@ -101,18 +101,31 @@
 
                           <!-- Tags -->
                           <div class="flex flex-col mb-4">
-                            <label for="media">Tags - Separate by comma ( , )</label>
+                            <label for="tags">Tags</label>
                               <div class="flex items-center">
                                 <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 w-full"
                                 type="text"
-                                id="media"
-                                title="Must be an image URL"
-                                minlength="8"
-                                name="media"
-                                placeholder="cat, cute, nft"/>
+                                id="tagInput"
+                                title="Tags can only contain letters and numbers"
+                                minlength="2"
+                                maxlength="20"
+                                name="tags"
+                                placeholder="cat"/>
                                 <button class="text-xl p-4 cursor-pointer" tabindex="0" id="addTags">⨁</button>
                             </div>
                           </div>
+                          <!-- Added tags -->
+                          <div class="flex">
+                            <div id="previewTagsContainer" class="flex gap-4">
+                                <template id="previewTagsTemplate">
+                                    <div class="flex items-center bg-white rounded-md shadow-md mb-4 p-2 gap-4">
+                                        <p id="previewTagsPar" class=""></p>
+                                        <button id="removeTagsButton">✕</button>
+                                    </div>
+                                </template>
+                            </div>
+                          </div>
+                          <p id="mediaError" class="text-warning"></p>
 
                           <!-- Description -->
                           <div class="flex flex-col mb-4">
@@ -128,7 +141,7 @@
 
                           <!-- Ends at -->
                           <div class="flex flex-col mb-4">
-                            <label for="description">Ends at:</label>
+                            <label for="description">Ends at: *</label>
                             <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 w-full"
                                 type="datetime-local"
                                 id="media"
