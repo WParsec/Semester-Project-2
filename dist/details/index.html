@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GavelBay | Title</title>
+    <link rel="stylesheet" href="../output.css">
+    <script defer type="module" src="../../src/js/pages/details.js"></script>
+</head>
+<body class="bg-white font-sans">
+    <header>
+        <nav class="p-5 shadow-xl">
+            <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
+              <div class="flex justify-between items-center ">
+                <span class="cursor-pointer">
+                  <img class="h-7 md:h-9" src="/dist/assets/logo.png" alt="Gavelbay logo">
+                </span>
+                <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
+                  <div>Menu</div>
+                </span>
+              </div>
+              <ul id="menu" class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full">
+                <li class="mt-10 md:m-0">
+                  <a href="/dist/index.html" class="active pt-10 px-10 sm:p-3">Explore</a>
+                </li>
+                <li id="liLogin" class="">
+                  <a href="../login/index.html" class="p-3">Login</a>
+                </li>
+                <li id="liNewListing" class="hidden">
+                  <a href="#" class="p-3">New Listing</a>
+                </li>
+                <li id="liAccount" class="hidden">
+                  <a href="../profile/index.html" class="p-3">Account</a>
+                </li>
+                <li id="liRegister">
+                  <a href="../register/index.html" class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all">
+                    Register
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <section class="container m-auto max-w-6xl mt-8 px-5 lg:px-0">
+            <div class="">
+                <div class="flex w-full border-b border-soft justify-between">
+                    <a href="../index.html" class="text-dark text-center tracking-widest md:text-left lg:pl-0">Back</a>
+                    <div class="hidden" id="creditsDiv">Tokens: <span id="creditSpan" class="text-dark-green text-xl font-medium"></span></div>
+                </div>
+            </div>
+        </section>
+        <section class="m-auto py-8 sm:py-20 relative">
+            <div class="container w-full m-auto px-5 overflow-hidden max-w-6xl lg:px-0">
+                <div class="flex gap-4 flex-col sm:flex-row">
+                  <div class="">
+                    <div class="rounded-md overflow-hidden sm:max-w-md"><img class="" src="/dist/assets/header.jpg" alt=""></div>
+                    <div class="flex justify-evenly items-center m-auto py-8 w-60">
+                        <div id="mediaNext" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer"><img src="/dist/assets/arrow.png" alt=""></div>
+                        <div class="px-4"><p>Page <span id="pageOf">1</span>of<span id="pageTot">1</span></p></div>
+                        <div id="mediaBack" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer"><img src="/dist/assets/arrow.png" class="rotate-180" alt=""></div>
+                      </div>
+                  </div>
+                  <div class="grow">
+                    <div class="flex flex-col gap-2 mb-4">
+                      <h1 id="titleWrap" class="text-3xl tracking-widest lg:pl-0">GLOWSTAG</h1>
+                      <p>Highest bid: <span id="amountWrap" class="text-dark-green font-medium text-lg">600</span></p>
+                      <p>published by <span id="sellerWrap" class="font-medium">Balls</span></p>
+                    </div>
+                  <div class="p-4 bg-white shadow-md w-full rounded-t-2xl z-10">Auction ends: <span id="endsAtWrap">Today</span></div>
+                  <div class="p-4 bg-gray h-64 rounded-b-2xl">
+                    <form method="GET" action="" id="searchListings" class="px-5 lg:px-0 grid grid-flow-row sm:grid-flow-col gap-2 sm:gap-8">
+                        <!-- Search post input -->
+                        <div class="flex flex-col gap-4 items-center md:items-start">
+                        <label for="bidInput">Place bid:</label>
+                          <input
+                            class="duration-500 focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md w-full max-w-sm"
+                            id="bidInput"
+                            type="number"
+                            name="bidInput"
+                            placeholder="100"
+                            minlength="1"
+                            maxlength="1000000"/>
+                        <button class="cta text-dark duration-400 py-3 rounded-md shadow-lg hover:shadow-2xl transition-all w-full max-w-sm">Place Bid</button>
+                        </div>
+                    </form>
+                    <div id="formError" class="text-warning mt-4">Error</div>
+                  </div>
+
+                  </div>
+                </div>
+                <div class="grid sm:grid-cols-profile gap-4"></div>
+            </div>
+        </section>
+    </main>
+</body>

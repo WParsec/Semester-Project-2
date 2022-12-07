@@ -8,7 +8,7 @@ import { hideShowLi } from "../ui/hideShowLi.js";
 import { runSort } from "../ui/sort.js";
 
 // import constants
-import { baseUrl, allListingsUrl, sellerFlag, activeFlag, createdUrl, searchListings, pageOf, pageTot, listingGrid } from "../data/constants.js";
+import { baseUrl, allListingsUrl, sellerFlag, activeFlag, createdUrl, searchListings, listingGrid } from "../data/constants.js";
 
 // constants
 const listingTemplate = document.querySelector("#listingTemplate").content;
@@ -19,10 +19,7 @@ getCreditAmount();
 hideShowLi();
 runSort();
 
-// page
-// let pageStart = 0;
-// let page = 0;
-
+// Url
 const standardUrl = baseUrl + allListingsUrl + sellerFlag + activeFlag + createdUrl;
 
 // Function fetches listings and builds page by looping results
@@ -37,11 +34,6 @@ export async function createAllListings(url) {
     }
   });
 
-  // pagination
-  let eachPage = resultArray.length;
-  // pageOf.innerText = page + 1 + " ";
-  // pageTot.innerText = " " + Math.ceil(resultArray.length / eachPage) + " ";
-
   // loop
   for (let i = 0; i < resultArrayHasImages.length; i++) {
     // Destructuring each result from loop
@@ -50,6 +42,7 @@ export async function createAllListings(url) {
       title,
       media,
       endsAt,
+      id,
     } = resultArrayHasImages[i];
 
     // finding highest bid
@@ -59,11 +52,7 @@ export async function createAllListings(url) {
     }
     // Creates template for each result
     const listingClone = document.importNode(listingTemplate, true);
-    if (media[0]) {
-      listingClone.querySelector("#listingMedia").style.backgroundImage = `url(${media[0]})`;
-    } else {
-      continue;
-    }
+    listingClone.querySelector("#listingMedia").style.backgroundImage = `url(${media[0]})`;
     if (!amount) {
       listingClone.querySelector("#listingAmount").innerText = `${"No bids"}`;
     } else {
@@ -72,6 +61,7 @@ export async function createAllListings(url) {
     listingClone.querySelector("#listingTitle").innerText = `${title}`;
     listingClone.querySelector("#listingSeller").innerText = `${name}`;
     listingClone.querySelector("#listingEnds").innerText = `${formatDate(endsAt)}`;
+    listingClone.querySelector("#listingMedia").href = `../dist/details/index.html?id=${id}`;
 
     // finally appending the child
     listingGrid.appendChild(listingClone);
@@ -118,19 +108,15 @@ export async function createAllListings(url) {
         listingClone.querySelector("#listingTitle").innerText = `${title}`;
         listingClone.querySelector("#listingSeller").innerText = `${name}`;
         listingClone.querySelector("#listingEnds").innerText = `${formatDate(endsAt)}`;
-        if (media[0]) {
-          listingClone.querySelector("#listingMedia").style.backgroundImage = `url(${media[0]})`;
-        } else {
-          eachPage = eachPage + 1;
-          continue;
-        }
+        listingClone.querySelector("#listingMedia").style.backgroundImage = `url(${media[0]})`;
+        listingClone.querySelector("#listingMedia").href = `../dist/details/index.html?id=${id}`;
 
         // finally appending the child
         listingGrid.appendChild(listingClone);
       }
     });
   }
-  searchListing(resultArray);
+  searchListing(resultArrayHasImages);
 }
 createAllListings(standardUrl);
 
