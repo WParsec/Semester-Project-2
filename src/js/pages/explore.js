@@ -25,10 +25,17 @@ runSort();
 
 const standardUrl = baseUrl + allListingsUrl + sellerFlag + activeFlag + createdUrl;
 
-// sort
+// Function fetches listings and builds page by looping results
 export async function createAllListings(url) {
   const resultArray = await standardFetch(url, createStandardHeader());
   listingGrid.innerHTML = "";
+
+  // Creating an array excluding the items that does not have image
+  const resultArrayHasImages = resultArray.filter((resultArray) => {
+    if (resultArray.media[0]) {
+      return resultArray;
+    }
+  });
 
   // pagination
   let eachPage = resultArray.length;
@@ -36,26 +43,25 @@ export async function createAllListings(url) {
   // pageTot.innerText = " " + Math.ceil(resultArray.length / eachPage) + " ";
 
   // loop
-  for (let i = 0; i < resultArray.length; i++) {
+  for (let i = 0; i < resultArrayHasImages.length; i++) {
     // Destructuring each result from loop
     const {
       seller: { name },
       title,
       media,
       endsAt,
-    } = resultArray[i];
+    } = resultArrayHasImages[i];
 
     // finding highest bid
     let amount;
-    if (resultArray[i]._count.bids > 0) {
-      amount = resultArray[i].bids[resultArray[i].bids.length - 1].amount;
+    if (resultArrayHasImages[i]._count.bids > 0) {
+      amount = resultArrayHasImages[i].bids[resultArrayHasImages[i].bids.length - 1].amount;
     }
     // Creates template for each result
     const listingClone = document.importNode(listingTemplate, true);
     if (media[0]) {
       listingClone.querySelector("#listingMedia").style.backgroundImage = `url(${media[0]})`;
     } else {
-      eachPage = eachPage + 1;
       continue;
     }
     if (!amount) {
@@ -86,6 +92,7 @@ export async function createAllListings(url) {
           listingGrid.innerHTML = "";
           return array;
         }
+        return;
       });
       for (let i = 0; i < filteredListings.length; i++) {
         // Destructuring each result from loop from ned array
@@ -98,8 +105,8 @@ export async function createAllListings(url) {
         } = filteredListings[i];
         // Building the template
         let amount;
-        if (resultArray[i]._count.bids.length > 0) {
-          amount = resultArray[i].bids[resultArray[i].bids.length - 1].amount;
+        if (filteredListings[i]._count.bids > 0) {
+          amount = filteredListings[i].bids[filteredListings[i].bids.length - 1].amount;
         }
         // Creates template for each result
         const listingClone = document.importNode(listingTemplate, true);

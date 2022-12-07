@@ -6,12 +6,12 @@ import { listingGrid, baseUrl, allListingsUrl, listingsFlag, sellerFlag, activeF
  */
 export function runSort() {
   const sortCreated = document.querySelector("#sortCreated");
-  const sortTitle = document.querySelector("#sortTitle");
+  const sortActive = document.querySelector("#sortActive");
+  const createdAsc = "&sort=created&sortOrder=asc";
+  const createdDesc = "&sort=created&sortOrder=desc";
+  const titleAsc = "&sort=title&sortOrder=asc";
+  const titleDesc = "&sort=title&sortOrder=desc";
   sortCreated.addEventListener("change", () => {
-    const createdAsc = "&sort=created&sortOrder=asc";
-    const createdDesc = "&sort=created&sortOrder=desc";
-    const titleAsc = "&sort=title&sortOrder=asc";
-    const titleDesc = "&sort=title&sortOrder=desc";
     switch (sortCreated.value) {
       case "Newest":
         listingGrid.innerHTML = "";
@@ -28,6 +28,18 @@ export function runSort() {
       case "Inverse-alphabetical":
         listingGrid.innerHTML = "";
         createAllListings(baseUrl + allListingsUrl + sellerFlag + activeFlag + titleDesc);
+        break;
+    }
+  });
+  sortActive.addEventListener("change", () => {
+    switch (sortActive.value) {
+      case "active":
+        listingGrid.innerHTML = "";
+        createAllListings(baseUrl + allListingsUrl + sellerFlag + activeFlag + createdDesc);
+        break;
+      case "all":
+        listingGrid.innerHTML = "";
+        createAllListings(baseUrl + allListingsUrl + sellerFlag + createdDesc);
         break;
     }
   });
