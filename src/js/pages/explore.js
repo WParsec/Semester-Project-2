@@ -8,7 +8,7 @@ import { hideShowLi } from "../ui/hideShowLi.js";
 import { runSort } from "../ui/sort.js";
 
 // import constants
-import { baseUrl, allListingsUrl, sellerFlag, activeFlag, searchListings, pageOf, pageTot, listingGrid } from "../data/constants.js";
+import { baseUrl, allListingsUrl, sellerFlag, activeFlag, createdUrl, searchListings, pageOf, pageTot, listingGrid } from "../data/constants.js";
 
 // constants
 const listingTemplate = document.querySelector("#listingTemplate").content;
@@ -20,24 +20,25 @@ hideShowLi();
 runSort();
 
 // page
-let pageStart = 0;
-let page = 0;
+// let pageStart = 0;
+// let page = 0;
 
-export async function createAllListings(sortUrl = "?_sort=created&sortOrder=asc") {
-  const resultArray = await standardFetch(baseUrl + allListingsUrl + sellerFlag + sortUrl + activeFlag, createStandardHeader());
-  console.log(baseUrl + allListingsUrl + sellerFlag + sortUrl + activeFlag);
+const standardUrl = baseUrl + allListingsUrl + sellerFlag + activeFlag + createdUrl;
+
+// sort
+export async function createAllListings(url) {
+  const resultArray = await standardFetch(url, createStandardHeader());
   listingGrid.innerHTML = "";
 
   // pagination
-  let eachPage = 64;
-  pageOf.innerText = page + 1 + " ";
-  pageTot.innerText = " " + Math.ceil(resultArray.length / eachPage) + " ";
+  let eachPage = resultArray.length;
+  // pageOf.innerText = page + 1 + " ";
+  // pageTot.innerText = " " + Math.ceil(resultArray.length / eachPage) + " ";
 
   // loop
-  for (let i = pageStart; i < pageStart + eachPage; i++) {
+  for (let i = 0; i < resultArray.length; i++) {
     // Destructuring each result from loop
     const {
-      //   bids: { amount },
       seller: { name },
       title,
       media,
@@ -46,7 +47,7 @@ export async function createAllListings(sortUrl = "?_sort=created&sortOrder=asc"
 
     // finding highest bid
     let amount;
-    if (resultArray[i]._count.bids.length > 0) {
+    if (resultArray[i]._count.bids > 0) {
       amount = resultArray[i].bids[resultArray[i].bids.length - 1].amount;
     }
     // Creates template for each result
@@ -124,42 +125,42 @@ export async function createAllListings(sortUrl = "?_sort=created&sortOrder=asc"
   }
   searchListing(resultArray);
 }
-createAllListings();
+createAllListings(standardUrl);
 
-function pagination() {
-  const next = document.querySelector("#arrowNext");
-  const back = document.querySelector("#arrowBack");
+// function pagination() {
+//   const next = document.querySelector("#arrowNext");
+//   const back = document.querySelector("#arrowBack");
 
-  back.style.display = "none";
+//   back.style.display = "none";
 
-  next.addEventListener("click", () => {
-    page++;
-    pageStart = pageStart + 32;
-    createAllListings();
-    if (page != 0) {
-      back.style.display = "flex";
-    }
-    if (page + 1 == pageTot.innerText) {
-      next.style.display = "none";
-    }
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    // pageOf.innerText = page + 1;
-  });
+//   next.addEventListener("click", () => {
+//     page++;
+//     pageStart = pageStart + 32;
+//     createAllListings();
+//     if (page != 0) {
+//       back.style.display = "flex";
+//     }
+//     if (page + 1 == pageTot.innerText) {
+//       next.style.display = "none";
+//     }
+//     window.scrollTo({ top: 0, behavior: "smooth" });
+//     // pageOf.innerText = page + 1;
+//   });
 
-  back.addEventListener("click", () => {
-    page--;
-    if (pageStart < 32) {
-      pageStart = 0;
-    }
-    pageStart = pageStart - 32;
-    createAllListings();
-    if (page != 0) {
-      back.style.display = "flex";
-    } else {
-      back.style.display = "none";
-    }
-    next.style.display = "flex";
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
-pagination();
+//   back.addEventListener("click", () => {
+//     page--;
+//     if (pageStart < 32) {
+//       pageStart = 0;
+//     }
+//     pageStart = pageStart - 32;
+//     createAllListings();
+//     if (page != 0) {
+//       back.style.display = "flex";
+//     } else {
+//       back.style.display = "none";
+//     }
+//     next.style.display = "flex";
+//     window.scrollTo({ top: 0, behavior: "smooth" });
+//   });
+// }
+// pagination();

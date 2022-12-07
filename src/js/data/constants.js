@@ -4,9 +4,11 @@ export const allListingsUrl = "/auction/listings";
 export const registerUrl = "/auction/auth/register";
 export const loginUrl = "/auction/auth/login";
 export const profileUrl = "/auction/profiles/";
+
 export const sellerFlag = "?_seller=true&_bids=true";
 export const listingsFlag = "?_listings=true";
 export const activeFlag = "&_active=true";
+export const createdUrl = "&sort=created&sortOrder=desc";
 
 // --------------- DOM --------------- //
 

@@ -17,7 +17,17 @@ export function createStandardHeader(accessToken) {
 }
 
 // POST with inputs
-export function createHeaderWithInputs(values) {
+export function createHeaderWithInputs(values, accessToken) {
+  if (accessToken) {
+    return {
+      method: "POST",
+      body: JSON.stringify({ ...values }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    };
+  }
   return {
     method: "POST",
     body: JSON.stringify({ ...values }),

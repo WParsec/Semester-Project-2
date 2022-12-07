@@ -662,6 +662,18 @@ html {
   height: 12rem;
 }
 
+.max-h-32{
+  max-height: 8rem;
+}
+
+.max-h-20{
+  max-height: 5rem;
+}
+
+.max-h-40{
+  max-height: 10rem;
+}
+
 .w-full{
   width: 100%;
 }
@@ -808,6 +820,11 @@ html {
 
 .bg-center{
   background-position: center;
+}
+
+.object-cover{
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-5{
@@ -974,6 +991,16 @@ html {
 .text-warning{
   --tw-text-opacity: 1;
   color: rgb(227 94 63 / var(--tw-text-opacity));
+}
+
+.text-gray{
+  --tw-text-opacity: 1;
+  color: rgb(238 237 239 / var(--tw-text-opacity));
+}
+
+.text-soft{
+  --tw-text-opacity: 1;
+  color: rgb(200 184 213 / var(--tw-text-opacity));
 }
 
 .opacity-0{
