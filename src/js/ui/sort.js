@@ -1,5 +1,5 @@
 import { createAllListings } from "../pages/explore.js";
-import { listingGrid, baseUrl, allListingsUrl, listingsFlag, sellerFlag, activeFlag } from "../data/constants.js";
+import { listingGrid, baseUrl, allListingsUrl, sellerFlag, activeFlag } from "../data/constants.js";
 
 /**
  * Adds parameter to createAllListings function and runs it
