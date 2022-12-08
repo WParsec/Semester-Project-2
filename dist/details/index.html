@@ -58,32 +58,30 @@
                 <!-- Div top  -->
                 <div class="flex flex-col md:flex-row gap-4">
                     <!-- Div left -->
-                  <div class="md:max-w-md">
+                  <div class="md:max-w-md h-fit">
                     <!-- Overflow container -->
                     <div class="flex border h-full max-h-96 rounded-md relative w-full md:max-w-md overflow-hidden">
                         <!-- Translate this for scroll images -->
                         <div id="sliderContainer" class="slider w-full flex duration-300">
-                            <img class="h-full object-cover object-center w-full shrink-0" src="/dist/assets/header.jpg" alt="">
-                            <img class="h-full object-cover object-center w-full shrink-0" src="/dist/assets/header.jpg" alt="">
                             <template id="sliderTemplate">
-                                <img class="h-full object-cover object-center w-full shrink-0" src="/dist/assets/header.jpg" alt="Image of the NFT">
+                                <img id="sliderImage" class="h-full object-cover object-center w-full shrink-0 min-w-[360px] min-h-[300px]" src="/dist/assets/header.jpg" alt="Image of the NFT">
                             </template>
                         </div>
                     </div>
-                    <div class="flex justify-evenly items-center m-auto py-8 w-60">
+                      <div class="flex justify-evenly items-center mx-auto py-8 w-60">
                         <div id="mediaBack" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer"><img src="/dist/assets/arrow.png" alt=""></div>
                         <div class="px-4"><p>Page <span id="pageOf">1</span>of<span id="pageTot">1</span></p></div>
                         <div id="mediaNext" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer"><img src="/dist/assets/arrow.png" class="rotate-180" alt=""></div>
-                      </div>
+                     </div>
                   </div>
                   <!-- Div right -->
                   <div class="grow md:w-1/2 md:shrink-0">
                     <div class="flex flex-col gap-2 mb-4">
-                      <h1 id="titleWrap" class="text-3xl tracking-widest lg:pl-0">GLOWSTAG</h1>
+                      <h1 id="titleWrap" class="text-3xl tracking-widest lg:pl-0"></h1>
                       <p>Highest bid: <span id="amountWrap" class="text-dark-green font-medium text-lg">600</span></p>
-                      <p>published by <span id="sellerWrap" class="font-medium">Balls</span></p>
+                      <p>published by <span id="sellerWrap" class="font-medium"></span></p>
                     </div>
-                  <div class="flex gap-4 p-4 bg-white shadow-md w-full rounded-t-2xl z-10"><h4>Auction ends: </h4><span id="endsAtWrap">Today</span></div>
+                  <div class="flex gap-4 p-4 bg-white shadow-md w-full rounded-t-2xl z-10"><h4>Auction ends: </h4><span id="endsAtWrap"></span></div>
                   <div class="bg-gray h-64 rounded-b-2xl pt-4">
                     <!-- Form -->
                     <form method="GET" action="" id="searchListings" class="px-5 grid grid-flow-row sm:grid-flow-col gap-2 sm:gap-8">
@@ -116,11 +114,10 @@
                     <div class="grow md:w-1/2 md:shrink-0">
                         <div class="p-4 bg-white shadow-md w-full rounded-t-2xl z-10"><h4>Bid history</h4></div>
                         <div id="bidderHistoryWrap" class="bg-gray p-4 h-fit flex flex-col gap-4 rounded-b-md">
-                            <p>No bidders</p>
                             <template id="bidderHistoryTemplate">
-                                <div class="w-full flex gap-4 font-medium">
-                                    <p id="bidderName">Cloud Crescent</p>
-                                    <p id="bidderAmount" class="text-dark-green">420</p>
+                                <div class="w-full flex justify-between font-medium max-h-40">
+                                    <p id="bidderName"></p>
+                                    <p>Amount: <span id="bidderAmount" class="text-dark-green"></span></p>
                                 </div>
                             </template>
                         </div>

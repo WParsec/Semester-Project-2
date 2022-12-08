@@ -33,6 +33,7 @@ main {
   background-size: cover;
   background-position: center;
   margin: 0 auto 2rem;
+  opacity: 1;
 }
 
 .cta {
