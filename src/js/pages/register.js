@@ -1,6 +1,7 @@
 // import functions
 import { toggleMenu } from "../ui/nav/toggleMenu.js";
 import { createLoginValues } from "../utils/loginValues.js";
+import { illustrateValidation } from "../ui/illustrateValidation.js";
 
 // import constants
 import { baseUrl, registerUrl, loginUrl, form, name, email, password, repeatPassword, formError } from "../data/constants.js";
@@ -11,14 +12,6 @@ import { createHeaderWithInputs } from "../headers/headers.js";
 toggleMenu();
 
 // Validation
-function illustrateValidation(element) {
-  element.addEventListener("keyup", () => {
-    element.classList.add("input-error");
-    if (element.validity.valid) {
-      element.classList.remove("input-error");
-    }
-  });
-}
 illustrateValidation(name);
 illustrateValidation(email);
 illustrateValidation(password);

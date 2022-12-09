@@ -13,9 +13,9 @@
         <nav class="p-5 shadow-xl">
             <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
               <div class="flex justify-between items-center ">
-                <span class="cursor-pointer">
+                <a href="/dist/index.html" class="cursor-pointer">
                   <img class="h-7 md:h-9" src="/dist/assets/logo.png" alt="Gavelbay logo">
-                </span>
+                </a>
                 <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
                   <div>Menu</div>
                 </span>
@@ -110,6 +110,7 @@
                                 minlength="2"
                                 maxlength="20"
                                 name="tags"
+                                pattern="^[\w0-9]+$"
                                 placeholder="cat"/>
                                 <button class="text-xl p-4 cursor-pointer" tabindex="0" id="addTags">⨁</button>
                             </div>
@@ -125,7 +126,7 @@
                                 </template>
                             </div>
                           </div>
-                          <p id="mediaError" class="text-warning"></p>
+                          <p id="tagError" class="text-warning"></p>
 
                           <!-- Description -->
                           <div class="flex flex-col mb-4">

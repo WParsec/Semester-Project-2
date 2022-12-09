@@ -64,8 +64,14 @@ function removeMedia(iteration, array, container, preview) {
 }
 
 function previewTags() {
+  if (!tagInput.validity.valid) {
+    document.querySelector("#tagError").innerText = tagInput.title;
+    tagInput.value = "";
+    return;
+  }
   if (tagInput.value !== "") {
     tagArray.push(tagInput.value);
+    document.querySelector("#tagError").innerText = "";
   }
   previewTagsContainer.innerHTML = "";
   for (let i = 0; i < tagArray.length; i++) {

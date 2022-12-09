@@ -2,8 +2,8 @@ import { hideShowLi } from "../ui/hideShowLi.js";
 import { toggleMenu } from "../ui/nav/toggleMenu.js";
 import { getCreditAmount } from "../ui/getCreditAmount.js";
 import { standardFetch } from "../fetch/fetch.js";
-import { createStandardHeader } from "../headers/headers.js";
-import { baseUrl, allListingsUrl, sellerFlag } from "../data/constants.js";
+import { createStandardHeader, createHeaderWithInputs } from "../headers/headers.js";
+import { baseUrl, allListingsUrl, sellerFlag, formError } from "../data/constants.js";
 import { formatDate } from "../utils/formatDate.js";
 
 // Initiate
@@ -20,7 +20,34 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-// Remember to change name of title of page
+// Bidding
+const bidUrl = baseUrl + allListingsUrl + "/" + id + "/bids";
+const bidForm = document.querySelector("#bidForm");
+
+bidForm.addEventListener("submit", placeBid);
+
+async function placeBid(event) {
+  event.preventDefault();
+  const accessToken = localStorage.getItem("accessToken");
+  const value = document.querySelector("#bidInput").value;
+  console.log(value);
+  const valueObject = {
+    amount: +value,
+  };
+  try {
+    await standardFetch(bidUrl, createHeaderWithInputs(valueObject, accessToken));
+    formError.classList.remove("text-warning");
+    formError.classList.add("text-dark-green");
+    formError.innerText = "Bid has been placed! Refresh to see it.";
+    document.querySelector("#bidInput").value = "";
+  } catch (e) {
+    if (e.toString() === "Error: No Authorization was found in request.headers") {
+      formError.innerText = "You must be logged in to place a bid";
+      return;
+    }
+    formError.innerText = `${e}`;
+  }
+}
 
 // Slider
 const sliderContainer = document.querySelector("#sliderContainer");
@@ -47,6 +74,7 @@ async function buildDetailsPage(id) {
     mediaClone.querySelector("#sliderImage").src = media[i];
     sliderContainer.appendChild(mediaClone);
   }
+  document.querySelector("#pageTotal").innerText = " " + media.length;
   // Bidders - reverse loop
   for (let i = bids.length - 1; i >= 0; i--) {
     const biddersClone = document.importNode(bidderHistoryTemplate, true).content;
@@ -74,6 +102,9 @@ async function buildDetailsPage(id) {
 }
 buildDetailsPage(id);
 
+//
+//
+//
 // Slide Images eventlistener
 mediaNext.addEventListener("click", () => {
   slideRight(arrayLength);
@@ -84,23 +115,30 @@ mediaBack.addEventListener("click", () => {
 });
 
 // Slide functions
+// tried every way possible to make these export/import functions, but was not able to.
 function slideRight(arrayLength) {
   if (count === arrayLength) {
     count = 0;
     sliderContainer.style.transform = `translateX(-${count * 100}%)`;
+    pageOfTotal();
     return;
   }
   count++;
   console.log(count);
   sliderContainer.style.transform = `translateX(-${count * 100}%)`;
+  pageOfTotal();
 }
-
 function slideLeft(arrayLength) {
   count--;
   if (count < 0) {
     count = arrayLength;
     sliderContainer.style.transform = `translateX(-${count * 100}%)`;
+    pageOfTotal();
   }
   console.log(count);
   sliderContainer.style.transform = `translateX(-${count * 100}%)`;
+  pageOfTotal();
+}
+function pageOfTotal() {
+  document.querySelector("#pageCurrent").innerText = count + 1;
 }
