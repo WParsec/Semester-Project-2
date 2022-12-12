@@ -22,8 +22,12 @@
     "tailwindcss": "^3.2.4"
   },
   "lint-staged": {
-    "*.{js,html,css}": "prettier --write",
-    "*.js": "eslint --fix"
+    "*.{js,html,css}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "live-server": "^1.2.2"
