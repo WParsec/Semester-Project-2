@@ -23,7 +23,7 @@
   },
   "lint-staged": {
     "*.{js,html,css}": "prettier --write",
-    "*.js": "eslint --cache --fix"
+    "src/js/**/*.js": "eslint --cache --fix"
   },
   "dependencies": {
     "live-server": "^1.2.2"
