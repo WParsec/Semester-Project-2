@@ -16,16 +16,16 @@ When a new user joins the website, they are given 1000 credits to use on the sit
 
 The client has specified the following requirements in the form of User Stories:
 
-- A user with a stud.noroff.no email may register
-- A registered user may login
-- A registered user may logout
-- A registered user may update their avatar
-- A registered user may view their total credit
-- A registered user may create a Listing with a title, deadline date, media gallery and description
-- A registered user may add a Bid to another user’s Listing
-- A registered user may view Bids made on a Listing
-- A registered user may use credit to make a Bid on another user’s Listing
-- An unregistered user may search through Listings
+- A user with a stud.noroff.no email may register :white_check_mark:
+- A registered user may login :white_check_mark:
+- A registered user may logout :white_check_mark:
+- A registered user may update their avatar :white_check_mark:
+- A registered user may view their total credit :white_check_mark:
+- A registered user may create a Listing with a title, deadline date, media gallery and description :white_check_mark:
+- A registered user may add a Bid to another user’s Listing :white_check_mark:
+- A registered user may view Bids made on a Listing :white_check_mark:
+- A registered user may use credit to make a Bid on another user’s Listing :white_check_mark:
+- An unregistered user may search through Listings :white_check_mark:
 
 ## Frameworks
 
@@ -43,11 +43,12 @@ Project uses tailwindcss as CSS framework and compiles from /src/css/styles.css 
 - "lint-staged"
 - "prettier"
 - "tailwindcss"
+- "live-server"
 
 ### Configurations
 
 - Project is configured to run prettier on all files on-save except tailwind.config.js
-- Project is configured to run eslint as pre-commit hook
+- Project is configured to run eslint --fix as pre-commit hook
 
 ## Gitignore
 
@@ -57,3 +58,4 @@ Project uses tailwindcss as CSS framework and compiles from /src/css/styles.css 
 - .eslintrc.json
 - .husky
 - .vscode
+- .eslintcache

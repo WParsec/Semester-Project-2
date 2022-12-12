@@ -44,6 +44,5 @@ async function registerSubmit(event) {
     await loginFetch(baseUrl + loginUrl, createHeaderWithInputs(loginValues));
   } catch (e) {
     console.log(e);
-    console.log("lint");
   }
 }
