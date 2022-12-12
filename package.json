@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "tailwind build -i src/style.css -o dist/output.css",
-    "watch": "tailwind build -i src/style.css -o dist/output.css --watch",
+    "watch": "tailwind build -i src/style.css -o dist/output.css --watch & live-server --open=../dist/index.html",
     "format": "prettier -w src/**/*.{js,html,css}",
     "lint": "eslint src/js/**/*.js",
     "lint-fix": "eslint src/js/**/*.js --fix",
@@ -24,5 +24,8 @@
   "lint-staged": {
     "*.{js,html,css}": "prettier --write",
     "*.js": "eslint --fix"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
   }
 }
