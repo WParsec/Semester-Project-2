@@ -17,7 +17,7 @@ body {
 }
 
 main {
-  background-image: url(/dist/assets/bg.jpg);
+  background-image: url(../dist/assets/bg.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -29,7 +29,7 @@ main {
 }
 
 .header-img {
-  background-image: url(/dist/assets/header.jpg);
+  background-image: url(../dist/assets/header.jpg);
   background-size: cover;
   background-position: center;
   margin: 0 auto 2rem;

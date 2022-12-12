@@ -1,57 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GavelBay | Home | Explore</title>
-    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="output.css" />
     <script defer type="module" src="../src/js/pages/explore.js"></script>
-</head>
-<body class="bg-white font-sans">
+  </head>
+  <body class="bg-white font-sans">
     <header>
-        <nav class="p-5 shadow-xl">
-            <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
-              <div class="flex justify-between items-center ">
-                <span class="cursor-pointer">
-                  <img class="h-7 md:h-9" src="./assets/logo.png" alt="Gavelbay logo">
-                </span>
-                <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
-                  <div>Menu</div>
-                </span>
-              </div>
-              <ul id="menu" class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full">
-                <li class="mt-10 md:m-0">
-                  <a href="index.html" class="active pt-10 px-10 sm:p-3">Explore</a>
-                </li>
-                <li id="liLogin" class="">
-                  <a href="./login/index.html" class="p-3">Login</a>
-                </li>
-                <li id="liNewListing" class="hidden">
-                  <a href="../dist/create/index.html" class="p-3">New Listing</a>
-                </li>
-                <li id="liAccount" class="hidden">
-                  <a href="./profile/index.html" class="p-3">Account</a>
-                </li>
-                <li id="liRegister">
-                  <a href="../dist/register/index.html" class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all">
-                    Register
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+      <nav class="p-5 shadow-xl">
+        <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
+          <div class="flex justify-between items-center">
+            <span class="cursor-pointer">
+              <img class="h-7 md:h-9" src="./assets/logo.png" alt="Gavelbay logo" />
+            </span>
+            <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
+              <div>Menu</div>
+            </span>
+          </div>
+          <ul
+            id="menu"
+            class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full"
+          >
+            <li class="mt-10 md:m-0">
+              <a href="index.html" class="active pt-10 px-10 sm:p-3">Explore</a>
+            </li>
+            <li id="liLogin" class="">
+              <a href="./login/index.html" class="p-3">Login</a>
+            </li>
+            <li id="liNewListing" class="hidden">
+              <a href="./create/index.html" class="p-3">New Listing</a>
+            </li>
+            <li id="liAccount" class="hidden">
+              <a href="./profile/index.html" class="p-3">Account</a>
+            </li>
+            <li id="liRegister">
+              <a href="./register/index.html" class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all"> Register </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
     <main class="bg-white relative">
       <div class="header-img h-40 lg:rounded-b-md flex items-center justify-center">
-        <h1 class="text-white text-center font-bold text-2xl tracking-widest sm:text-4xl sm:tracking-widest md:text-5xl md:tracking-widest">YOUR ONLINE NFT AUCTION</h1>
+        <h1 class="text-white text-center font-bold text-2xl tracking-widest sm:text-4xl sm:tracking-widest md:text-5xl md:tracking-widest">
+          YOUR ONLINE NFT AUCTION
+        </h1>
       </div>
       <div class="container m-auto max-w-6xl mt-8 mb-8 px-5 lg:px-0">
         <div class="flex w-full border-b border-soft justify-between items-start flex-row sm:flex-row gap-4">
-            <h2 class="text-xl md:text-3xl tracking-widest lg:pl-0">Explore</h2>
-            <div class="hidden" id="creditsDiv"><p class="text-lg">Tokens: <span class="text-dark-green text-xl font-medium" id="creditSpan">420</span></p></div>
+          <h2 class="text-xl md:text-3xl tracking-widest lg:pl-0">Explore</h2>
+          <div class="hidden" id="creditsDiv">
+            <p class="text-lg">Tokens: <span class="text-dark-green text-xl font-medium" id="creditSpan">420</span></p>
+          </div>
         </div>
-    </div>
+      </div>
       <!-- search field -->
       <div class="w-full max-w-6xl lg:m-auto">
         <form method="GET" action="" id="searchListings" class="px-5 lg:px-0 grid grid-flow-row sm:grid-flow-col gap-2 sm:gap-8">
@@ -66,7 +71,7 @@
               minlength="1"
               maxlength="100"
             />
-          <button class="cta text-dark duration-400 py-3 rounded-md shadow-lg hover:shadow-2xl transition-all w-full">Search</button>
+            <button class="cta text-dark duration-400 py-3 rounded-md shadow-lg hover:shadow-2xl transition-all w-full">Search</button>
           </div>
           <div class="flex gap-4 sm:gap-8 w-full justify-between mt-4 sm:mt-0">
             <select id="sortCreated" class="bg-white text-dark py-3 pl-7 rounded-md shadow-lg transition-all w-full">
@@ -90,7 +95,10 @@
               <div id="listingLabel" class="h-1/3 w-full bg-dark-opacity absolute bottom-0 rounded-br-lg rounded-bl-lg p-2 pl-3 listing-label">
                 <!-- See more text - hidden -->
                 <p id="seeMoreHidden" class="text-sm hidden">See more</p>
-                <div class=""><h3 id="listingTitle" class="font-medium">Glowstag</h3><p class="text-sm">by <span id="listingSeller">NFTits</span></p></div>
+                <div class="">
+                  <h3 id="listingTitle" class="font-medium">Glowstag</h3>
+                  <p class="text-sm">by <span id="listingSeller">NFTits</span></p>
+                </div>
                 <p class="text-sm"><span id="listingAmount" class="text-green text-base">600</span></p>
                 <p class="text-sm"><span id="listingEnds" class="">24.12.2022</span></p>
               </div>
@@ -111,14 +119,19 @@
         </div>
         <div class="container max-w-6xl w-full py-24 flex">
           <div class="flex justify-evenly max-w-xs items-center m-auto">
-            <div id="arrowBack" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer"><img src="/dist/assets/arrow.png" alt=""></div>
-            <div class="px-4"><p>Page <span id="pageOf">1</span>of<span id="pageTot">1</span></p></div>
-            <div id="arrowNext" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer"><img src="/dist/assets/arrow.png" class="rotate-180" alt=""></div>
+            <div id="arrowBack" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
+              <img src="/dist/assets/arrow.png" alt="" />
+            </div>
+            <div class="px-4">
+              <p>Page <span id="pageOf">1</span>of<span id="pageTot">1</span></p>
+            </div>
+            <div id="arrowNext" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
+              <img src="/dist/assets/arrow.png" class="rotate-180" alt="" />
+            </div>
           </div>
         </div>
       </div>
     </main>
-    <footer class="h-56">
-    </footer>
+    <footer class="h-56"></footer>
   </body>
 </html>
