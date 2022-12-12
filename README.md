@@ -26,6 +26,13 @@ For market relevance, I decided to create an NFT auction website.
  npm run start
 ```
 
+### Deployment
+
+- Project is configured to run deployment to Github pages on push to branch "Main"
+  [![Deploy static content to Pages](https://github.com/WParsec/Semester-Project-2/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/WParsec/Semester-Project-2/actions/workflows/pages.yml)
+
+- Project link: https://wparsec.github.io/Semester-Project-2/
+
 ## Assignment Brief
 
 An auction site is looking to launch a website where users can add items to be bid on and bid on items other users have put up for auction.
