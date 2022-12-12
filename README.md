@@ -6,6 +6,26 @@ This is my semester project for 2nd year at Noroff Front-end development.
 We were given the task to create an auction website from start to finish with design and theme of own choice - over the course of 5 weeks.
 For market relevance, I decided to create an NFT auction website.
 
+## Initializing and running the project
+
+- Clone the project and initialize git in your code editor
+
+```
+ git init
+```
+
+- Install Dependencies
+
+```
+ npm install
+```
+
+- Start the project with live-server
+
+```
+ npm run start
+```
+
 ## Assignment Brief
 
 An auction site is looking to launch a website where users can add items to be bid on and bid on items other users have put up for auction.
