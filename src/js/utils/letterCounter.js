@@ -1,4 +1,4 @@
-export function letterCounter() {
+export function letterCounter(description) {
   const charSpan = document.querySelector("#characters");
   let remaining = 200;
   charSpan.innerHTML = `${remaining - description.value.length}`;

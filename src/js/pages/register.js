@@ -2,6 +2,7 @@
 import { toggleMenu } from "../ui/nav/toggleMenu.js";
 import { createLoginValues } from "../utils/loginValues.js";
 import { illustrateValidation } from "../ui/illustrateValidation.js";
+import { bounceError } from "../ui/bounceError.js";
 
 // import constants
 import { baseUrl, registerUrl, loginUrl, form, name, email, password, repeatPassword, formError } from "../data/constants.js";
@@ -36,6 +37,7 @@ async function registerSubmit(event) {
     await standardFetch(baseUrl + registerUrl, createHeaderWithInputs(values));
   } catch (e) {
     formError.innerText = `${e}`;
+    bounceError(formError);
     // return to stop code if error
     return;
   }

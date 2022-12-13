@@ -25,10 +25,10 @@
             class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full"
           >
             <li class="mt-10 md:m-0">
-              <a href="../index.html" class="active pt-10 px-10 sm:p-3">Explore</a>
+              <a href="../index.html" class="pt-10 px-10 sm:p-3">Explore</a>
             </li>
             <li class="">
-              <a href="/dist/login/index.html" class="p-3">Login</a>
+              <a href="/dist/login/index.html" class="p-3 font-medium">Login</a>
             </li>
             <li class="hidden p-3">
               <a href="#" class="">New Listing</a>
@@ -45,13 +45,13 @@
       <section class="container m-auto max-w-6xl mt-8 mb-8 px-5 lg:px-0">
         <div class="">
           <div class="flex w-full border-b border-soft">
-            <h2 class="text-dark text-center font-bold text-3xl tracking-widest pb-2 md:text-left lg:pl-0">Login</h2>
+            <h2 class="text-dark text-center text-3xl tracking-widest pb-2 md:text-left lg:pl-0">Login</h2>
           </div>
         </div>
       </section>
       <section class="container m-auto max-w-6xl mt-16 mb-8 px-5 lg:px-0">
         <div class="flex justify-center flex-col">
-          <form method="POST" action="" id="loginForm" class="flex flex-col gap-4 w-full max-w-md m-auto">
+          <form method="POST" action="submit" id="loginForm" aria-describedby="formError" class="flex flex-col gap-4 w-full max-w-md m-auto">
             <!-- Form Email -->
             <div class="flex flex-col">
               <label for="email">Email</label>
@@ -68,7 +68,6 @@
                 pattern="^[\w\-.]+@(stud.)?noroff.no$"
                 required
               />
-              <div class="form-error" id="emailError"></div>
             </div>
 
             <!-- Form Password -->

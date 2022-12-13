@@ -2,6 +2,7 @@ import { baseUrl, loginUrl, loginForm, email, password, formError } from "../dat
 import { createHeaderWithInputs } from "../headers/headers.js";
 import { loginFetch } from "../fetch/fetch.js";
 import { illustrateValidation } from "../ui/illustrateValidation.js";
+import { bounceError } from "../ui/bounceError.js";
 
 // Validation
 illustrateValidation(email);
@@ -19,6 +20,7 @@ async function loginSubmit(event) {
     await loginFetch(baseUrl + loginUrl, createHeaderWithInputs(values));
   } catch (e) {
     formError.innerText = `${e}`;
+    bounceError(formError);
   }
 }
 

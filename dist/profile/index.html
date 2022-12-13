@@ -1,105 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="online auction site profile page" />
     <title>GavelBay | Profile</title>
-    <link rel="stylesheet" href="../output.css">
+    <link rel="stylesheet" href="../output.css" />
     <script defer type="module" src="/src/js/pages/profile.js"></script>
-</head>
-<body class="bg-white font-sans">
+  </head>
+  <body class="bg-white font-sans">
     <header>
-        <nav class="p-5 shadow-xl">
-            <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
-              <div class="flex justify-between items-center ">
-                <a href="/dist/index.html" class="cursor-pointer">
-                  <img class="h-7 md:h-9" src="/dist/assets/logo.png" alt="Gavelbay logo">
-                </a>
-                <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
-                  <div>Menu</div>
-                </span>
-              </div>
-              <ul id="menu" class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full">
-                <li class="mt-10 md:m-0">
-                  <a href="/dist/index.html" class="active pt-10 px-10 sm:p-3">Explore</a>
-                </li>
-                <li id="liLogin" class="">
-                  <a href="../login/index.html" class="p-3">Login</a>
-                </li>
-                <li id="liNewListing" class="hidden">
-                  <a href="../create/index.html" class="p-3">New Listing</a>
-                </li>
-                <li id="liAccount" class="hidden">
-                  <a href="../profile/index.html" class="p-3">Account</a>
-                </li>
-                <li id="liRegister">
-                  <a href="../register/index.html" class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all">
-                    Register
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+      <nav class="p-5 shadow-xl">
+        <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
+          <div class="flex justify-between items-center">
+            <a href="/dist/index.html" class="cursor-pointer">
+              <img class="h-7 md:h-9" src="/dist/assets/logo.png" alt="Gavelbay logo" />
+            </a>
+            <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
+              <div>Menu</div>
+            </span>
+          </div>
+          <ul
+            id="menu"
+            class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full"
+          >
+            <li class="mt-10 md:m-0">
+              <a href="/dist/index.html" class="pt-10 px-10 sm:p-3">Explore</a>
+            </li>
+            <li id="liLogin" class="">
+              <a href="../login/index.html" class="p-3">Login</a>
+            </li>
+            <li id="liNewListing" class="hidden">
+              <a href="../create/index.html" class="p-3">New Listing</a>
+            </li>
+            <li id="liAccount" class="hidden">
+              <a href="../profile/index.html" class="p-3 font-medium">Account</a>
+            </li>
+            <li id="liRegister">
+              <a href="../register/index.html" class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all"> Register </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
     <main>
-        <section class="container m-auto max-w-6xl mt-8 px-5 lg:px-0">
-            <div class="">
-                <div class="flex w-full border-b border-soft">
-                    <h1 class="text-xl md:text-3xl tracking-widest lg:pl-0">Profile</h2>
-                </div>
-            </div>
-        </section>
-        <section class="m-auto py-20 relative">
-            <div class="container w-full m-auto px-5 overflow-hidden max-w-6xl lg:px-0">
-                <div class="grid sm:grid-cols-profile gap-4">
-                    <div class="flex items-center justify-center">
-                        <div id="avatarDiv" class="rounded-full border-orange border-2 overflow-hidden h-48 w-48 bg-cover bg-center">
-                            <img class="h-full mt-2" src="/dist/assets/profile-icon.png" alt="profile icon">
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-8 items-center sm:items-start">
-                        <h2 class="text-2xl font-medium" id="profileUsername"></h2>
-                        <div class="flex gap-4">
-                            <button id="editAvatarButton" class="bg-white shadow-lg px-8 py-2 rounded-md">Edit avatar</button>
-                            <button id="logOutButton" class="cta shadow-lg px-8 py-2 rounded-md">Logout</button>
-                        </div>
-                        <p class="text-lg">Tokens: <span id="creditSpan" class="text-dark-green text-xl font-medium"></span></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div id="modal" class="modal hidden px-5">
-            <div class="modal-content bg-white p-4 rounded-md w-full max-w-md" aria-modal="true">
-                <div class="modal-header flex justify-between items-center mb-4">
-                    <h2 class="text-xl font-medium">Edit avatar</h2>
-                    <button id="modalClose" class="text-4xl p-2 cursor-pointer" tabindex="0" aria-label="close">☠</button>
-                </div>
-                <label for="avatar">Avatar URL</label>
-                <form method="PUT" action="" id="editAvatarForm" class="w-full max-w-md m-auto transition-all">
-                    <!-- Form Url -->
-                    <div class="flex flex-col gap-8">
-                      <input class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
-                        type="text"
-                        id="avatar"
-                        title="Must be an image URL"
-                        minlength="8"
-                        name="avatar"
-                        placeholder="www.unsplash.com/image/cat"
-                        aria-errormessage="mediaError"
-                        required/>
-                      <div class="text-warning" id="mediaError"></div>
-                    </div>
-                    <button class="cta text-dark duration-400 py-3 rounded-md shadow-lg hover:shadow-2xl transition-all w-full">Submit</button>
-                </form>
-            </div>
+      <section class="container m-auto max-w-6xl mt-8 px-5 lg:px-0">
+        <div class="">
+          <div class="flex w-full border-b border-soft">
+            <h1 class="text-xl md:text-3xl tracking-widest lg:pl-0">Profile</h1>
+          </div>
         </div>
-        <section class="container m-auto max-w-6xl px-5 lg:px-0">
-            <div class="">
-                <div class="flex w-full border-b border-soft">
-                    <h2 class="text-dark text-center tracking-widest md:text-left lg:pl-0">My listings</h2>
-                </div>
+      </section>
+      <section class="m-auto py-20 relative">
+        <div class="container w-full m-auto px-5 overflow-hidden max-w-6xl lg:px-0">
+          <div class="grid sm:grid-cols-profile gap-4">
+            <div class="flex items-center justify-center">
+              <div id="avatarDiv" class="rounded-full border-orange border-2 overflow-hidden h-48 w-48 bg-cover bg-center">
+                <img class="h-full mt-2" src="/dist/assets/profile-icon.png" alt="profile icon" />
+              </div>
             </div>
-        </section>
+            <div class="flex flex-col gap-8 items-center sm:items-start">
+              <h2 class="text-2xl font-medium" id="profileUsername"></h2>
+              <div class="flex gap-4">
+                <button id="editAvatarButton" class="bg-white shadow-lg px-8 py-2 rounded-md">Edit avatar</button>
+                <button id="logOutButton" class="cta shadow-lg px-8 py-2 rounded-md">Logout</button>
+              </div>
+              <p class="text-lg">Tokens: <span id="creditSpan" class="text-dark-green text-xl font-medium"></span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div id="modal" class="modal hidden px-5">
+        <div class="modal-content bg-white p-4 rounded-md w-full max-w-md" aria-modal="true">
+          <div class="modal-header flex justify-between items-center mb-4">
+            <h2 class="text-xl font-medium">Edit avatar</h2>
+            <button id="modalClose" class="text-4xl p-2 cursor-pointer" tabindex="0" aria-label="close">☠</button>
+          </div>
+          <label for="avatar">Avatar URL</label>
+          <form method="PUT" action="" id="editAvatarForm" class="w-full max-w-md m-auto transition-all">
+            <!-- Form Url -->
+            <div class="flex flex-col gap-8">
+              <input
+                class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
+                type="text"
+                id="avatar"
+                title="Must be an image URL"
+                minlength="8"
+                name="avatar"
+                placeholder="www.unsplash.com/image/cat"
+                aria-errormessage="mediaError"
+                required
+              />
+              <div class="text-warning" id="mediaError"></div>
+            </div>
+            <button class="cta text-dark duration-400 py-3 rounded-md shadow-lg hover:shadow-2xl transition-all w-full">Submit</button>
+          </form>
+        </div>
+      </div>
+      <section class="container m-auto max-w-6xl px-5 lg:px-0">
+        <div class="">
+          <div class="flex w-full border-b border-soft">
+            <h2 class="text-dark text-center tracking-widest md:text-left lg:pl-0">My listings</h2>
+          </div>
+        </div>
+      </section>
     </main>
-</body>
+  </body>
+</html>

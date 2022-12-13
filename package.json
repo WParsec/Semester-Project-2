@@ -2,11 +2,12 @@
   "name": "semester-project",
   "version": "0.7.0",
   "description": "Semester Project third semester Noroff",
+  "homepage": "https://wparsec.github.io/Semester-Project-2/",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "build": "tailwind build -i src/style.css -o dist/output.css",
-    "watch": "tailwind build -i src/style.css -o dist/output.css --watch & live-server --open=../dist/index.html",
+    "watch": "tailwind build -i src/style.css -o dist/output.css --watch",
     "start": "tailwind build -i src/style.css -o dist/output.css & live-server --open=../dist/index.html",
     "format": "prettier -w src/**/*.{js,html,css}",
     "lint": "eslint src/js/**/*.js",

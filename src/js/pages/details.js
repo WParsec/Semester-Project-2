@@ -5,6 +5,7 @@ import { standardFetch } from "../fetch/fetch.js";
 import { createStandardHeader, createHeaderWithInputs } from "../headers/headers.js";
 import { baseUrl, allListingsUrl, sellerFlag, formError } from "../data/constants.js";
 import { formatDate } from "../utils/formatDate.js";
+import { bounceError } from "../ui/bounceError.js";
 
 // Initiate
 hideShowLi();
@@ -41,6 +42,7 @@ async function placeBid(event) {
     formError.innerText = "Bid has been placed! Refresh to see it.";
     document.querySelector("#bidInput").value = "";
   } catch (e) {
+    bounceError(formError);
     if (e.toString() === "Error: No Authorization was found in request.headers") {
       formError.innerText = "You must be logged in to place a bid";
       return;
@@ -61,7 +63,6 @@ async function buildDetailsPage(id) {
     endsAt,
     bids,
     media,
-    tags,
     title,
     seller: { name },
     // _count: { bids },

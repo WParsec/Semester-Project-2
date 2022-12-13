@@ -93,7 +93,9 @@ function previewTags() {
 // Eventlistener
 addMediaButton.addEventListener("click", previewMedia);
 addTagsButton.addEventListener("click", previewTags);
-description.addEventListener("keyup", letterCounter);
+description.addEventListener("keyup", () => {
+  letterCounter(description);
+});
 
 // On submit
 

@@ -10,7 +10,7 @@ module.exports = {
       "warning": "#E35E3F",
       "gray": "#EEEDEF",
       "green": "#A1E08E",
-      "dark-green": "#50AA33",
+      "dark-green": "#52933D",
       "soft": "#C8B8D5",
       "dark-opacity": "rgba(0, 0, 0, 0.6)",
     },

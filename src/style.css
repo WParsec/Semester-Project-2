@@ -100,3 +100,23 @@ main {
 .animation-load-2 {
   animation: load 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+@keyframes shake {
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.animation-error {
+  animation: shake 500ms;
+  animation-iteration-count: 1;
+}
