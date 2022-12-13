@@ -2,7 +2,7 @@
   "name": "semester-project",
   "version": "0.7.0",
   "description": "Semester Project third semester Noroff",
-  "homepage": "https://wparsec.github.io/Semester-Project-2/",
+  "homepage": "https://wparsec.github.io/Semester-Project-2/dist/",
   "main": "index.js",
   "type": "module",
   "scripts": {

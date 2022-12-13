@@ -18,12 +18,12 @@
               <img class="h-7 md:h-9" src="./assets/logo.png" alt="Gavelbay logo" />
             </a>
             <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
-              <div>Menu</div>
+              <div><img src="./assets/burger-icon.svg" alt="Menu icon" /></div>
             </span>
           </div>
           <ul
             id="menu"
-            class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full"
+            class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-200 md:gap-8 bg-white h-full"
           >
             <li class="mt-10 md:m-0">
               <a href="index.html" class="font-medium pt-10 px-10 sm:p-3">Explore</a>
@@ -47,7 +47,7 @@
     <main class="bg-white relative">
       <header>
         <div class="header-img h-40 lg:rounded-b-md flex items-center justify-center">
-          <h1 class="text-white text-center font-bold text-2xl tracking-widest sm:text-4xl sm:tracking-widest md:text-5xl md:tracking-widest">
+          <h1 class="text-white text-center font-bold text-2xl tracking-widest sm:text-3xl sm:tracking-widest md:text-4xl lg:text-5xl md:tracking-widest">
             YOUR ONLINE NFT AUCTION
           </h1>
         </div>
@@ -68,7 +68,7 @@
             <div class="flex flex-row gap-4 sm:gap-8">
               <input
                 class="duration-500 focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md w-full"
-                id="searchListings"
+                id="searchInput"
                 type="text"
                 name="search"
                 placeholder="Search Listings"
@@ -76,7 +76,7 @@
                 maxlength="100"
                 title="Search listings"
               />
-              <button class="cta text-dark duration-400 py-3 rounded-md shadow-lg hover:shadow-2xl transition-all w-full">Search</button>
+              <button id="searchButton" class="cta text-dark duration-400 py-3 rounded-md shadow-lg hover:shadow-2xl transition-all w-full">Search</button>
             </div>
             <div class="flex gap-4 sm:gap-8 w-full justify-between mt-4 sm:mt-0" aria-label="sort listings">
               <select id="sortCreated" class="bg-white text-dark py-3 pl-7 rounded-md shadow-lg transition-all w-full">

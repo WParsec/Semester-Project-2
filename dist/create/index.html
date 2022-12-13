@@ -60,7 +60,7 @@
               <form method="POST" action="submit" id="createListingForm" class="flex flex-col w-full max-w-lg m-auto transition-all">
                 <!-- Form Username -->
                 <div class="flex flex-col mb-4">
-                  <label for="name">Title *</label>
+                  <label for="name">Title <span class="text-warning">*</span></label>
                   <input
                     class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300"
                     id="title"
@@ -74,11 +74,10 @@
                     required
                   />
                 </div>
-
                 <!-- Form Media -->
                 <div class="flex flex-col mb-4">
-                  <label for="media">Media Link *</label>
-                  <div class="flex items-center gap-2">
+                  <label for="media">Media Link <span class="text-warning">*</span></label>
+                  <div class="flex gap-2 flex-col sm:flex-row items-start">
                     <input
                       class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 w-full"
                       type="text"
@@ -88,7 +87,9 @@
                       name="media"
                       placeholder="www.unsplash.com/image/cat"
                     />
-                    <button type="button" class="cursor-pointer w-1/3 p-3 shadow-md bg-white rounded-md" tabindex="0" id="addMedia">Add media</button>
+                    <button type="button" class="cursor-pointer w-full sm:w-1/3 p-3 shadow-md bg-white rounded-md" tabindex="0" id="addMedia">
+                      Add media <i>+</i>
+                    </button>
                   </div>
                 </div>
                 <!-- Added media -->
@@ -96,18 +97,17 @@
                   <div id="previewFlexContainer" class="flex gap-4">
                     <template id="previewMediaTemplate">
                       <div class="flex flex-col items-center gap-2">
-                        <div id="previewMediaDiv" class="h-16 w-16 flex rounded-xl overflow-hidden"><img src="../assets/image-error.png" alt="" /></div>
+                        <div id="previewMediaDiv" class="h-16 w-16 flex rounded-xl overflow-hidden"></div>
                         <button id="removeMediaButton" class="text-warning">Remove</button>
                       </div>
                     </template>
                   </div>
                 </div>
                 <p id="mediaError" class="text-warning"></p>
-
                 <!-- Tags -->
                 <div class="flex flex-col mb-4">
                   <label for="tags">Tags</label>
-                  <div class="flex items-center gap-2">
+                  <div class="flex gap-2 flex-col sm:flex-row items-start">
                     <input
                       class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 w-full"
                       type="text"
@@ -119,7 +119,7 @@
                       pattern="^[\w0-9]+$"
                       placeholder="cat"
                     />
-                    <button class="cursor-pointer w-1/3 p-3 shadow-md bg-white rounded-md" tabindex="0" id="addTags">Add tags</button>
+                    <button class="cursor-pointer w-full sm:w-1/3 p-3 shadow-md bg-white rounded-md" tabindex="0" id="addTags">Add tags <i>+</i></button>
                   </div>
                 </div>
                 <!-- Added tags -->
@@ -134,7 +134,6 @@
                   </div>
                 </div>
                 <p id="tagError" class="text-warning"></p>
-
                 <!-- Description -->
                 <div class="flex flex-col mb-4">
                   <label class="flex justify-between" for="description">Description <span class="text-dark-green" id="characters">200</span></label>
@@ -148,10 +147,9 @@
                     maxlength="200"
                   ></textarea>
                 </div>
-
                 <!-- Ends at -->
                 <div class="flex flex-col mb-4">
-                  <label for="description">Ends at: *</label>
+                  <label for="description">Ends at: <span class="text-warning">*</span></label>
                   <input
                     class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 w-full"
                     type="datetime-local"
@@ -163,12 +161,10 @@
                     required
                   />
                 </div>
-
                 <!-- Error box -->
                 <div class="">
                   <p id="formError" class="text-warning"></p>
                 </div>
-
                 <!-- Form Button -->
                 <button
                   id="submitButton"

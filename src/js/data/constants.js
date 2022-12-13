@@ -13,7 +13,7 @@ export const createdUrl = "&sort=created&sortOrder=desc";
 // --------------- DOM --------------- //
 
 // Explore
-export const searchListings = document.querySelector("#searchListings");
+export const searchInput = document.querySelector("#searchInput");
 export const pageOf = document.querySelector("#pageOf");
 export const pageTot = document.querySelector("#pageTot");
 export const listingGrid = document.querySelector("#listingGrid");

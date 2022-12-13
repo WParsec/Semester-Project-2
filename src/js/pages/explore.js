@@ -6,9 +6,10 @@ import { formatDate } from "../utils/formatDate.js";
 import { getCreditAmount } from "../ui/getCreditAmount.js";
 import { hideShowLi } from "../ui/hideShowLi.js";
 import { runSort } from "../ui/sort.js";
+import { searchWithButton } from "../ui/searchButton.js";
 
 // import constants
-import { baseUrl, allListingsUrl, sellerFlag, activeFlag, createdUrl, searchListings, listingGrid } from "../data/constants.js";
+import { baseUrl, allListingsUrl, sellerFlag, activeFlag, createdUrl, searchInput, listingGrid } from "../data/constants.js";
 
 // constants
 const listingTemplate = document.querySelector("#listingTemplate").content;
@@ -71,7 +72,7 @@ export async function createAllListings(url) {
    * Function for searching listing
    */
   function searchListing(array) {
-    searchListings.addEventListener("keyup", (event) => {
+    searchInput.addEventListener("keyup", (event) => {
       const inputValue = event.target.value.toLowerCase();
       const filteredListings = array.filter((array) => {
         if (
@@ -117,5 +118,11 @@ export async function createAllListings(url) {
     });
   }
   searchListing(resultArrayHasImages);
+
+  // Button search in case needed for accessability reasons
+  document.querySelector("#searchButton").addEventListener("click", (event) => {
+    event.preventDefault();
+    searchWithButton(resultArrayHasImages);
+  });
 }
 createAllListings(standardUrl);

@@ -77,12 +77,15 @@ Project uses tailwindcss as CSS framework and compiles from /src/css/styles.css 
 - Project is configured to run prettier on all files on-save except tailwind.config.js
 - Project is configured to run eslint --fix as pre-commit hook
 
-## Gitignore
-
-### Following files are .gitignored
+#### Following files are .gitignored
 
 - /node_modules
 - .eslintrc.json
 - .husky
 - .vscode
 - .eslintcache
+
+#### Eslint configurations
+
+- rules: No undefined: "Off"
+  This is due to eslint giving undefined errors of node imports that are used to build site using template element.
