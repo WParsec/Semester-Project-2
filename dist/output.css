@@ -719,10 +719,6 @@ html {
   width: 12rem;
 }
 
-.min-w-\[360px\] {
-  min-width: 360px;
-}
-
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -816,6 +812,19 @@ html {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.break-words {
+  overflow-wrap: break-word;
+}
+
+.break-all {
+  word-break: break-all;
 }
 
 .rounded-md {
@@ -1273,26 +1282,6 @@ main {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.focus\:w-2\/3:focus {
-  width: 66.666667%;
-}
-
-.focus\:w-full:focus {
-  width: 100%;
-}
-
-.focus\:w-\[150\%\]:focus {
-  width: 150%;
-}
-
-.focus\:w-\[2000\%\]:focus {
-  width: 2000%;
-}
-
-.focus\:w-\[200\%\]:focus {
-  width: 200%;
-}
-
 .focus\:w-\[250\%\]:focus {
   width: 250%;
 }
@@ -1339,6 +1328,11 @@ main {
 
   .sm\:gap-8 {
     gap: 2rem;
+  }
+
+  .sm\:break-normal {
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .sm\:p-3 {
