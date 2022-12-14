@@ -1,12 +1,16 @@
 import { baseUrl, loginUrl, loginForm, email, password, formError } from "../data/constants.js";
 import { createHeaderWithInputs } from "../headers/headers.js";
 import { loginFetch } from "../fetch/fetch.js";
-import { illustrateValidation } from "../ui/illustrateValidation.js";
+import { illustrateValidation, displayRequestedFormat } from "../ui/illustrateValidation.js";
 import { bounceError } from "../ui/bounceError.js";
 
 // Validation
 illustrateValidation(email);
 illustrateValidation(password);
+
+document.querySelector("#submitButton").addEventListener("click", () => {
+  displayRequestedFormat(email, formError);
+});
 
 /**
  * Collects input values from form and puts them in object "values"

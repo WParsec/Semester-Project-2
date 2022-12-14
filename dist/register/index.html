@@ -68,6 +68,7 @@
                 pattern="^[\w]+$"
                 required
               />
+              <p id="usernameError" class="text-warning text-sm"></p>
             </div>
             <!-- Form Email -->
             <div class="flex flex-col">
@@ -84,6 +85,7 @@
                 pattern="^[\w\-.]+@(stud.)?noroff.no$"
                 required
               />
+              <p id="emailError" class="text-warning text-sm"></p>
             </div>
             <!-- Form Password -->
             <div class="flex flex-col">
@@ -120,7 +122,11 @@
               <p id="formError" class="text-warning"></p>
             </div>
             <!-- Form Button -->
-            <button type="submit" class="cta text-dark duration-400 px-7 py-3 mt-4 rounded-md shadow-lg hover:scale-110 max-w-md transition-all">
+            <button
+              id="submitButton"
+              type="submit"
+              class="cta text-dark duration-400 px-7 py-3 mt-4 rounded-md shadow-lg hover:scale-110 max-w-md transition-all"
+            >
               Register
             </button>
           </form>

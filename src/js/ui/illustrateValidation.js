@@ -7,3 +7,11 @@ export function illustrateValidation(element) {
     }
   });
 }
+
+export function displayRequestedFormat(element, errorDiv) {
+  if (!element.validity.valid && element.value.length > 0) {
+    errorDiv.innerText = element.title;
+  } else {
+    errorDiv.innerText = "";
+  }
+}
