@@ -28,7 +28,7 @@ export async function loginFetch(url, body) {
     localStorage.setItem("accessToken", accessToken);
     localStorage.setItem("usernameGavelbay", name);
     localStorage.setItem("credits", credits);
-    window.location.href = "../../../";
+    window.location.href = "../../index.html";
     return data;
   }
   throw new Error(data.errors[0].message);
