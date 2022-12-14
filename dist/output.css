@@ -1120,16 +1120,16 @@ html {
   transition-duration: 150ms;
 }
 
-.duration-200 {
-  transition-duration: 200ms;
+.duration-300 {
+  transition-duration: 300ms;
 }
 
 .duration-500 {
   transition-duration: 500ms;
 }
 
-.duration-300 {
-  transition-duration: 300ms;
+.duration-200 {
+  transition-duration: 200ms;
 }
 
 .ease-in {
@@ -1149,7 +1149,7 @@ main {
 }
 
 .show {
-  top: 70px;
+  top: 65px;
   opacity: 100;
   z-index: 50;
 }
@@ -1251,6 +1251,10 @@ main {
   animation-iteration-count: 1;
 }
 
+.valid\:border:valid {
+  border-width: 1px;
+}
+
 .valid\:border-dark-green:valid {
   --tw-border-opacity: 1;
   border-color: rgb(82 147 61 / var(--tw-border-opacity));
@@ -1267,6 +1271,30 @@ main {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.focus\:w-2\/3:focus {
+  width: 66.666667%;
+}
+
+.focus\:w-full:focus {
+  width: 100%;
+}
+
+.focus\:w-\[150\%\]:focus {
+  width: 150%;
+}
+
+.focus\:w-\[2000\%\]:focus {
+  width: 2000%;
+}
+
+.focus\:w-\[200\%\]:focus {
+  width: 200%;
+}
+
+.focus\:w-\[250\%\]:focus {
+  width: 250%;
 }
 
 .focus\:shadow-xl:focus {
