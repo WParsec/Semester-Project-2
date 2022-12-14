@@ -3,7 +3,7 @@ export function illustrateValidation(element) {
     element.classList.add("input-error");
     if (element.validity.valid) {
       element.classList.remove("input-error");
-      //   element.classList.add("border-green");
+      // element.classList.add("border-green");
     }
   });
 }

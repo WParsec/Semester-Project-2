@@ -57,16 +57,16 @@
             <div class="flex flex-col">
               <label for="email">Email</label>
               <input
-                class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 valid:border-green"
+                class="focus:outline-none p-3 shadow-md focus:shadow-xl rounded-md duration-300 valid:border-dark-green"
                 type="email"
                 id="email"
                 title="The email value must be a valid stud.noroff.no or noroff.no email address."
                 minlength="8"
                 maxlength="40"
-                class="form-control"
                 name="email"
                 placeholder="Email address"
                 pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                aria-describedby="formError"
                 required
               />
             </div>
@@ -84,6 +84,7 @@
                 class="form-control"
                 name="password"
                 placeholder="Your password"
+                aria-describedby="formError"
                 required
               />
             </div>

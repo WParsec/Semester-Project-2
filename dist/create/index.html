@@ -71,6 +71,7 @@
                     minlength="3"
                     maxlength="20"
                     pattern="^[\w0-9' ]+$"
+                    aria-describedby="formError"
                     required
                   />
                 </div>
@@ -86,6 +87,7 @@
                       minlength="8"
                       name="media"
                       placeholder="www.unsplash.com/image/cat"
+                      aria-describedby="formError"
                     />
                     <button type="button" class="cursor-pointer w-full sm:w-1/3 p-3 shadow-md bg-white rounded-md" tabindex="0" id="addMedia">
                       Add media <i>+</i>
@@ -118,6 +120,7 @@
                       name="tags"
                       pattern="^[\w0-9]+$"
                       placeholder="cat"
+                      aria-describedby="formError"
                     />
                     <button class="cursor-pointer w-full sm:w-1/3 p-3 shadow-md bg-white rounded-md" tabindex="0" id="addTags">Add tags <i>+</i></button>
                   </div>
@@ -145,6 +148,7 @@
                     rows="5"
                     minlength="3"
                     maxlength="200"
+                    aria-describedby="formError"
                   ></textarea>
                 </div>
                 <!-- Ends at -->
@@ -157,7 +161,7 @@
                     title="Must be an image URL"
                     minlength="8"
                     name="endsAt"
-                    placeholder="cat, cute, nft"
+                    aria-describedby="formError"
                     required
                   />
                 </div>

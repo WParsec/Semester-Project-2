@@ -857,6 +857,10 @@ html {
   border-width: 2px;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -874,6 +878,11 @@ html {
 .border-orange {
   --tw-border-opacity: 1;
   border-color: rgb(255 158 106 / var(--tw-border-opacity));
+}
+
+.border-dark-green {
+  --tw-border-opacity: 1;
+  border-color: rgb(82 147 61 / var(--tw-border-opacity));
 }
 
 .bg-white {
@@ -1120,6 +1129,10 @@ html {
   transition-duration: 150ms;
 }
 
+.transition-none {
+  transition-property: none;
+}
+
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -1251,9 +1264,18 @@ main {
   animation-iteration-count: 1;
 }
 
+.valid\:border:valid {
+  border-width: 1px;
+}
+
 .valid\:border-green:valid {
   --tw-border-opacity: 1;
   border-color: rgb(161 224 142 / var(--tw-border-opacity));
+}
+
+.valid\:border-dark-green:valid {
+  --tw-border-opacity: 1;
+  border-color: rgb(82 147 61 / var(--tw-border-opacity));
 }
 
 .hover\:scale-110:hover {
@@ -1315,11 +1337,6 @@ main {
 
   .sm\:p-3 {
     padding: 0.75rem;
-  }
-
-  .sm\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .sm\:text-3xl {
@@ -1415,19 +1432,14 @@ main {
     text-align: left;
   }
 
-  .md\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
-  }
-
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .md\:tracking-widest {
@@ -1464,11 +1476,6 @@ main {
 
   .lg\:text-5xl {
     font-size: 3rem;
-    line-height: 1;
-  }
-
-  .lg\:text-6xl {
-    font-size: 3.75rem;
     line-height: 1;
   }
 }
