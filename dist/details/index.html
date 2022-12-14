@@ -14,11 +14,11 @@
       <nav class="p-5 shadow-xl">
         <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
           <div class="flex justify-between items-center">
-            <a href="/dist/index.html" class="cursor-pointer">
-              <img class="h-7 md:h-9" src="/dist/assets/logo.png" alt="Gavelbay logo" />
+            <a href="../../index.html" class="cursor-pointer">
+              <img class="h-7 md:h-9" src="../assets/logo.png" alt="Gavelbay logo" />
             </a>
             <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
-              <div>Menu</div>
+              <div><img src="../assets/burger-icon.svg" alt="Menu icon" /></div>
             </span>
           </div>
           <ul
@@ -26,19 +26,19 @@
             class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full"
           >
             <li class="mt-10 md:m-0">
-              <a href="/dist/index.html" class="active pt-10 px-10 sm:p-3">Explore</a>
+              <a href="../../" class="active pt-10 px-10 sm:p-3">Explore</a>
             </li>
             <li id="liLogin" class="">
-              <a href="../login/index.html" class="p-3">Login</a>
+              <a href="../login/" class="p-3">Login</a>
             </li>
             <li id="liNewListing" class="hidden">
-              <a href="../create/index.html" class="p-3">New Listing</a>
+              <a href="../create/" class="p-3">New Listing</a>
             </li>
             <li id="liAccount" class="hidden">
-              <a href="../profile/index.html" class="p-3">Account</a>
+              <a href="../profile/" class="p-3">Account</a>
             </li>
             <li id="liRegister">
-              <a href="../register/index.html" class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all"> Register </a>
+              <a href="../register/" class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all">Register</a>
             </li>
           </ul>
         </div>
@@ -48,7 +48,7 @@
       <section class="container m-auto max-w-6xl mt-8 px-5 lg:px-0">
         <div class="">
           <div class="flex w-full border-b border-soft justify-between">
-            <a href="../index.html" class="text-dark text-center tracking-widest md:text-left lg:pl-0">Back</a>
+            <a href="../../" class="text-dark text-center tracking-widest md:text-left lg:pl-0">Back</a>
             <div class="hidden" id="creditsDiv">Tokens: <span id="creditSpan" class="text-dark-green text-xl font-medium"></span></div>
           </div>
         </div>
@@ -77,13 +77,13 @@
               </div>
               <div class="flex justify-evenly items-center mx-auto py-8 w-60">
                 <div id="mediaBack" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
-                  <img src="/dist/assets/arrow.png" alt="" />
+                  <img src="../assets/arrow.png" alt="" />
                 </div>
                 <div class="px-4">
                   <p>Page <span id="pageCurrent">1</span> of<span id="pageTotal"></span></p>
                 </div>
                 <div id="mediaNext" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
-                  <img src="/dist/assets/arrow.png" class="rotate-180" alt="" />
+                  <img src="../assets/arrow.png" class="rotate-180" alt="" />
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@
               </div>
               <div class="bg-gray h-64 rounded-b-2xl pt-4">
                 <!-- Form -->
-                <form method="POST" action="" id="bidForm" class="px-5 grid grid-flow-row sm:grid-flow-col gap-2 sm:gap-8">
+                <form method="POST" action="submit" id="bidForm" class="px-5 grid grid-flow-row sm:grid-flow-col gap-2 sm:gap-8">
                   <!-- Bid input -->
                   <div class="flex flex-col gap-4">
                     <label for="bidInput">Place bid:</label>

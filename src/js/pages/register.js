@@ -26,6 +26,7 @@ form.addEventListener("submit", (event) => {
     formError.innerText = "Passwords do not match";
     repeatPassword.classList.add("input-error");
     repeatPassword.ariaInvalid = true;
+    bounceError(formError);
   }
 });
 

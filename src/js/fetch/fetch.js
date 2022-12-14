@@ -1,7 +1,7 @@
 /**
  * A fetch that can be used multiple places.
  * @param {string} url
- * @param {string} body
+ * @param {object} body
  * @returns response object
  */
 export async function standardFetch(url, body) {
@@ -16,7 +16,7 @@ export async function standardFetch(url, body) {
 /**
  * A fetch that can be used multiple places.
  * @param {string} url
- * @param {string} body
+ * @param {object} body
  * @returns response object
  */
 export async function loginFetch(url, body) {
@@ -28,7 +28,7 @@ export async function loginFetch(url, body) {
     localStorage.setItem("accessToken", accessToken);
     localStorage.setItem("usernameGavelbay", name);
     localStorage.setItem("credits", credits);
-    window.location.href = "../../../dist/index.html";
+    window.location.href = "../../../";
     return data;
   }
   throw new Error(data.errors[0].message);

@@ -12,7 +12,7 @@ toggleMenu();
 function logOut() {
   localStorage.removeItem("accessToken");
   localStorage.removeItem("usernameGavelbay");
-  window.location.href = "/dist/index.html";
+  window.location.href = "../../../";
 }
 
 // Modals
@@ -20,11 +20,13 @@ const modal = document.querySelector("#modal");
 function openModal() {
   modal.classList.remove("hidden");
   modal.classList.add("flex");
+  modal.ariaExpanded = true;
 }
 
 function closeModal() {
   modal.classList.remove("flex");
   modal.classList.add("hidden");
+  modal.ariaExpanded = false;
 }
 
 // Eventlistener's
