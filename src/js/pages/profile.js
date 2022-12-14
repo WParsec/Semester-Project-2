@@ -12,7 +12,7 @@ toggleMenu();
 function logOut() {
   localStorage.removeItem("accessToken");
   localStorage.removeItem("usernameGavelbay");
-  window.location.href = "../../../";
+  window.location.href = "../../";
 }
 
 // Modals
