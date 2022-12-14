@@ -1,6 +1,6 @@
 {
   "name": "semester-project",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Semester Project third semester Noroff",
   "homepage": "https://wparsec.github.io/Semester-Project-2/dist/",
   "main": "src/js/pages/explore.js",
