@@ -7,7 +7,6 @@ import { getCreditAmount } from "../ui/getCreditAmount.js";
 import { hideShowLi } from "../ui/hideShowLi.js";
 import { runSort } from "../ui/sort.js";
 import { searchWithButton } from "../ui/searchButton.js";
-
 // import constants
 import { baseUrl, allListingsUrl, sellerFlag, activeFlag, createdUrl, searchInput, listingGrid } from "../data/constants.js";
 
@@ -27,14 +26,12 @@ const standardUrl = baseUrl + allListingsUrl + sellerFlag + activeFlag + created
 export async function createAllListings(url) {
   const resultArray = await standardFetch(url, createStandardHeader());
   listingGrid.innerHTML = "";
-
   // Creating an array excluding the items that does not have image
   const resultArrayHasImages = resultArray.filter((resultArray) => {
     if (resultArray.media[0]) {
       return resultArray;
     }
   });
-
   // loop
   for (let i = 0; i < resultArrayHasImages.length; i++) {
     // Destructuring each result from loop
@@ -45,7 +42,6 @@ export async function createAllListings(url) {
       endsAt,
       id,
     } = resultArrayHasImages[i];
-
     // finding highest bid
     let amount;
     if (resultArrayHasImages[i]._count.bids > 0) {
@@ -63,7 +59,6 @@ export async function createAllListings(url) {
     listingClone.querySelector("#listingSeller").innerText = `${name}`;
     listingClone.querySelector("#listingEnds").innerText = `${formatDate(endsAt)}`;
     listingClone.querySelector("#listingMedia").href = `../dist/details/index.html?id=${id}`;
-
     // finally appending the child
     listingGrid.appendChild(listingClone);
   }

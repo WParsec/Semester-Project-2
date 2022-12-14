@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="your online NFT auction homepage" />
     <title>GavelBay | Home | Explore</title>
-    <link rel="stylesheet" href="./output.css" />
+    <link rel="stylesheet" href="./dist/output.css" />
     <script src="./src/js/pages/explore.js" defer type="module"></script>
   </head>
   <body class="bg-white font-sans">
@@ -14,8 +14,8 @@
       <nav class="p-5 shadow-xl">
         <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
           <div class="flex justify-between items-center">
-            <a href="index.html" class="cursor-pointer">
-              <img class="h-7 md:h-9" src="./assets/logo.png" alt="Gavelbay logo" />
+            <a href="./index.html" class="cursor-pointer">
+              <img class="h-7 md:h-9" src="./dist/assets/logo.png" alt="Gavelbay logo" />
             </a>
             <span id="toggleMenu" class="cursor-pointer mx-2 md:hidden block">
               <div><img src="./assets/burger-icon.svg" alt="Menu icon" /></div>
@@ -26,19 +26,21 @@
             class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-200 md:gap-8 bg-white h-full"
           >
             <li class="mt-10 md:m-0">
-              <a href="index.html" class="font-medium pt-10 px-10 sm:p-3">Explore</a>
+              <a href="./index.html" class="font-medium pt-10 px-10 sm:p-3">Explore</a>
             </li>
             <li id="liLogin" class="">
-              <a href="./login/index.html" class="p-3">Login</a>
+              <a href="./dist/login/index.html" class="p-3">Login</a>
             </li>
             <li id="liNewListing" class="hidden">
-              <a href="./create/index.html" class="p-3">Create Listing</a>
+              <a href="./dist/create/index.html" class="p-3">Create Listing</a>
             </li>
             <li id="liAccount" class="hidden">
-              <a href="./profile/index.html" class="p-3">Account</a>
+              <a href="./dist/profile/index.html" class="p-3">Account</a>
             </li>
             <li id="liRegister">
-              <a href="./register/index.html" class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all"> Register </a>
+              <a href="./dist/register/index.html" class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all">
+                Register
+              </a>
             </li>
           </ul>
         </div>
@@ -125,13 +127,13 @@
           <div class="container max-w-6xl w-full py-24 flex">
             <div class="flex justify-evenly max-w-xs items-center m-auto">
               <div id="arrowBack" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
-                <img src="./assets/arrow.png" alt="Arrow icon" />
+                <img src="./dist/assets/arrow.png" alt="Arrow icon" />
               </div>
               <div class="px-4">
                 <p>Page <span id="pageOf">1</span>of<span id="pageTot">1</span></p>
               </div>
               <div id="arrowNext" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
-                <img src="./assets/arrow.png" class="rotate-180" alt="Arrow icon" />
+                <img src="./dist/assets/arrow.png" class="rotate-180" alt="Arrow icon" />
               </div>
             </div>
           </div>
