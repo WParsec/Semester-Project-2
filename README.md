@@ -11,7 +11,7 @@ For market relevance, I decided to create an NFT auction website.
 - Clone the project and initialize git in your code editor
 
 ```
- git init
+ git clone https://github.com/WParsec/Semester-Project-2.git
 ```
 
 - Install Dependencies
