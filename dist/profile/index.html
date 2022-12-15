@@ -105,7 +105,7 @@
             <h2 class="text-dark text-center tracking-widest md:text-left lg:pl-0">My NFT's</h2>
           </div>
         </div>
-        <div class="container w-full mt-8 mb-8">
+        <div class="w-full mt-8 mb-8">
           <div id="listingGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             <template id="listingTemplate">
               <a href="#" id="listingMedia" class="listing-card">
@@ -122,6 +122,31 @@
           </div>
         </div>
       </section>
+      <section class="container m-auto max-w-6xl px-5 lg:px-0 pb-32">
+        <div class="">
+          <div class="flex w-full border-b border-soft">
+            <h2 class="text-dark text-center tracking-widest md:text-left lg:pl-0">My listings</h2>
+          </div>
+        </div>
+        <div class="w-full mt-8 mb-8">
+          <div id="listingGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <template id="listingTemplate">
+              <a href="#" id="listingMedia" class="listing-card">
+                <div id="listingLabel" class="h-1/3 w-full bg-dark-opacity absolute bottom-0 rounded-br-lg rounded-bl-lg p-2 pl-3 listing-label">
+                  <div class="">
+                    <h3 id="listingTitle" class="font-medium break-normal"></h3>
+                    <p class="text-sm">by <span id="listingSeller"></span></p>
+                  </div>
+                  <p class="text-sm"><span id="listingAmount" class="text-green text-base"></span></p>
+                  <p class="text-sm"><span id="listingEnds" class=""></span></p>
+                </div>
+              </a>
+            </template>
+            <div class="listing-card animation-load-2"></div>
+          </div>
+        </div>
+      </section>
     </main>
+    <footer class="h-56"></footer>
   </body>
 </html>

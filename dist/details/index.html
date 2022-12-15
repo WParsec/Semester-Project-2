@@ -76,13 +76,13 @@
                 </div>
               </div>
               <div class="flex justify-evenly items-center mx-auto py-8 w-60">
-                <div id="mediaBack" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
+                <div id="mediaBack" tabindex="0" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
                   <img src="../assets/arrow.png" alt="" />
                 </div>
                 <div class="px-4">
                   <p>Page <span id="pageCurrent">1</span> of<span id="pageTotal"></span></p>
                 </div>
-                <div id="mediaNext" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
+                <div id="mediaNext" tabindex="0" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
                   <img src="../assets/arrow.png" class="rotate-180" alt="" />
                 </div>
               </div>
@@ -94,11 +94,14 @@
                 <p>Highest bid: <span id="amountWrap" class="text-dark-green font-medium text-lg"></span></p>
                 <p>published by <span id="sellerWrap" class="font-medium"></span></p>
               </div>
-              <div class="flex gap-4 p-4 bg-white shadow-md w-full rounded-t-2xl z-10">
-                <h4>Auction ends:</h4>
-                <span id="endsAtWrap"></span>
+              <div class="flex p-4 bg-white shadow-md w-full rounded-t-2xl z-10 justify-between flex-col gap-y-4 sm:flex-row">
+                <div class="flex gap-2">
+                  <h3>Expires:</h3>
+                  <span id="endsAtWrap"></span>
+                </div>
+                <button id="editButton" class="cta shadow-lg px-8 py-2 rounded-md hidden">Edit</button>
               </div>
-              <div class="bg-gray h-64 rounded-b-2xl pt-4">
+              <div id="bidderDiv" class="bg-gray h-64 rounded-b-2xl pt-4">
                 <!-- Form -->
                 <form method="POST" action="submit" id="bidForm" class="px-5 grid grid-flow-row sm:grid-flow-col gap-2 sm:gap-8">
                   <!-- Bid input -->
@@ -131,7 +134,7 @@
             </div>
             <!-- div right -->
             <div class="grow md:w-1/2 md:shrink-0">
-              <div class="p-4 bg-white shadow-md w-full rounded-t-2xl z-10"><h4>Bid history</h4></div>
+              <div class="p-4 bg-white shadow-md w-full rounded-t-2xl z-10"><h3>Bid history</h3></div>
               <div id="bidderHistoryWrap" class="bg-gray p-4 h-fit flex flex-col gap-4 rounded-b-md">
                 <template id="bidderHistoryTemplate">
                   <div class="w-full flex justify-between font-medium max-h-40">
@@ -145,5 +148,6 @@
         </div>
       </section>
     </main>
+    <footer class="h-56"></footer>
   </body>
 </html>

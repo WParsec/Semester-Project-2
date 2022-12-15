@@ -68,7 +68,11 @@ async function buildDetailsPage(id) {
     // _count: { bids },
   } = response;
   document.title = `Gavelbay | ${title}`;
-
+  // Check if post belongs to user
+  if (name === localStorage.getItem("usernameGavelbay")) {
+    document.querySelector("#editButton").classList.remove("hidden");
+    document.querySelector("#bidderDiv").classList.add("hidden");
+  }
   // Media
   for (let i = 0; i < media.length; i++) {
     const mediaClone = document.importNode(sliderTemplate, true).content;
@@ -98,7 +102,7 @@ async function buildDetailsPage(id) {
   document.querySelector("#endsAtWrap").innerText = formatDate(endsAt);
   // Description
   document.querySelector("#descriptionWrap").innerText = description;
-
+  // Give value to arrayLength
   arrayLength = media.length - 1;
 }
 buildDetailsPage(id);
