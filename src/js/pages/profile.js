@@ -1,13 +1,17 @@
 import { hideShowLi } from "../ui/hideShowLi.js";
-import { logOutButton, editAvatarButton } from "../data/constants.js";
+import { logOutButton, editAvatarButton, allListingsUrl, sellerFlag } from "../data/constants.js";
 import { toggleMenu } from "../ui/nav/toggleMenu.js";
-import { baseUrl, profileUrl, listingsFlag, profileUsername } from "../data/constants.js";
+import { baseUrl, profileUrl, listingsFlag, profileUsername, listingGrid } from "../data/constants.js";
 import { createStandardHeader, editProfile } from "../headers/headers.js";
 import { standardFetch } from "../fetch/fetch.js";
+import { formatDate } from "../utils/formatDate.js";
 
 // Initiate
 hideShowLi();
 toggleMenu();
+
+// DOM
+const listingTemplate = document.querySelector("#listingTemplate").content;
 
 function logOut() {
   localStorage.removeItem("accessToken");
@@ -45,14 +49,31 @@ async function createProfile() {
 
   const response = await fetch(baseUrl + profileUrl + username + listingsFlag, createStandardHeader(accessToken));
   const data = await response.json();
-  console.log(data);
   // Build page with data
-  const { name, avatar, credits } = data;
+  const { name, avatar, credits, wins } = data;
   profileUsername.innerText = name;
   document.querySelector("#creditSpan").innerText = `${credits}`;
   if (avatar) {
     document.querySelector("#avatarDiv").style.backgroundImage = `url("${avatar}")`;
     document.querySelector("#avatarDiv").firstElementChild.remove();
+  }
+  for (let i = 0; i < wins.length; i++) {
+    const response = await fetch(baseUrl + allListingsUrl + "/" + wins[i] + sellerFlag, createStandardHeader);
+    const data = await response.json();
+    const {
+      media,
+      title,
+      seller: { name },
+      endsAt,
+    } = data;
+    let amount = data.bids[data.bids.length - 1].amount;
+    const listingClone = document.importNode(listingTemplate, true);
+    listingClone.querySelector("#listingMedia").style.backgroundImage = `url(${media[0]})`;
+    listingClone.querySelector("#listingTitle").innerText = `${title}`;
+    listingClone.querySelector("#listingSeller").innerText = `${name}`;
+    listingClone.querySelector("#listingEnds").innerText = `${formatDate(endsAt)}`;
+    listingClone.querySelector("#listingAmount").innerText = `${amount}`;
+    listingGrid.appendChild(listingClone);
   }
 }
 createProfile();
