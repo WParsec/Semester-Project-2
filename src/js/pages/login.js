@@ -3,6 +3,10 @@ import { createHeaderWithInputs } from "../headers/headers.js";
 import { loginFetch } from "../fetch/fetch.js";
 import { illustrateValidation, displayRequestedFormat } from "../ui/illustrateValidation.js";
 import { bounceError } from "../ui/bounceError.js";
+import { toggleMenu } from "../ui/nav/toggleMenu.js";
+
+// Initiate
+toggleMenu();
 
 // Validation
 illustrateValidation(email);
