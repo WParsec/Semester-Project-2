@@ -90,7 +90,7 @@
             <!-- Div right -->
             <div class="grow md:w-1/2 md:shrink-0">
               <div class="flex flex-col gap-2 mb-4">
-                <h1 id="titleWrap" class="text-3xl tracking-widest lg:pl-0 break-all sm:break-normal"></h1>
+                <h1 id="titleWrap" class="text-3xl tracking-widest lg:pl-0 break-class"></h1>
                 <p>Highest bid: <span id="amountWrap" class="text-dark-green font-medium text-lg"></span></p>
                 <p>published by <span id="sellerWrap" class="font-medium"></span></p>
               </div>
@@ -148,6 +148,10 @@
         </div>
       </section>
     </main>
-    <footer class="h-56"></footer>
+    <footer class="h-56 p-4 relative">
+      <div class="w-full max-w-6xl mx-auto h-full">
+        <p class="absolute bottom-4">© 2022 Tom Ertvaag</p>
+      </div>
+    </footer>
   </body>
 </html>

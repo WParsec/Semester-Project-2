@@ -29,9 +29,9 @@ main {
 }
 
 .header-img {
-  background-image: url(./assets/header.jpg);
+  background-image: url(./assets/headerimg.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: top;
   margin: 0 auto 2rem;
   opacity: 1;
 }
@@ -69,6 +69,10 @@ main {
 
 .input-error {
   border: 1px solid #e35e3f;
+}
+
+.break-class {
+  word-break: break-word;
 }
 
 /* ---------------------------- Modal ---------------------------- */
