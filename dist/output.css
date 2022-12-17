@@ -556,8 +556,12 @@ html {
   }
 }
 
-.fixed {
-  position: fixed;
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 .absolute {
@@ -584,20 +588,32 @@ html {
   bottom: 1rem;
 }
 
-.top-\[-100px\] {
-  top: -100px;
+.top-0 {
+  top: 0px;
 }
 
-.top-\[100px\] {
-  top: 100px;
+.left-1\/2 {
+  left: 50%;
 }
 
-.top-\[1\+00px\] {
-  top: 1+00px;
+.left-1\/3 {
+  left: 33.333333%;
 }
 
-.top-\[1000px\] {
-  top: 1000px;
+.top-4 {
+  top: 1rem;
+}
+
+.left-4 {
+  left: 1rem;
+}
+
+.left-1\/4 {
+  left: 25%;
+}
+
+.top-2 {
+  top: 0.5rem;
 }
 
 .z-\[-1\] {
@@ -654,22 +670,6 @@ html {
   margin-top: 0.5rem;
 }
 
-.mt-\[-100px\] {
-  margin-top: -100px;
-}
-
-.mt-\[mt-\\\[-100px\\\]\] {
-  margin-top: mt-\[-100px\];
-}
-
-.mt-\[mt-\\\[2100px\\\]\] {
-  margin-top: mt-\[2100px\];
-}
-
-.mt-\[mt-\\\[200px\\\]\] {
-  margin-top: mt-\[200px\];
-}
-
 .block {
   display: block;
 }
@@ -694,8 +694,8 @@ html {
   height: 100%;
 }
 
-.h-80 {
-  height: 20rem;
+.h-60 {
+  height: 15rem;
 }
 
 .h-1\/3 {
@@ -727,12 +727,16 @@ html {
   height: 12rem;
 }
 
-.h-40 {
-  height: 10rem;
+.h-10 {
+  height: 2.5rem;
 }
 
-.h-60 {
-  height: 15rem;
+.h-5 {
+  height: 1.25rem;
+}
+
+.h-8 {
+  height: 2rem;
 }
 
 .max-h-96 {
@@ -858,6 +862,10 @@ html {
   gap: 2rem;
 }
 
+.gap-1 {
+  gap: 0.25rem;
+}
+
 .gap-y-4 {
   row-gap: 1rem;
 }
@@ -941,6 +949,11 @@ html {
 .bg-gray {
   --tw-bg-opacity: 1;
   background-color: rgb(238 237 239 / var(--tw-bg-opacity));
+}
+
+.bg-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(46 28 60 / var(--tw-bg-opacity));
 }
 
 .bg-cover {
@@ -1334,8 +1347,16 @@ main {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.focus\:inline-block:focus {
+  display: inline-block;
+}
+
 .focus\:w-\[250\%\]:focus {
   width: 250%;
+}
+
+.focus\:opacity-100:focus {
+  opacity: 1;
 }
 
 .focus\:shadow-xl:focus {
@@ -1524,5 +1545,15 @@ main {
   .lg\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:top-4 {
+    top: 1rem;
+  }
+
+  .xl\:left-4 {
+    left: 1rem;
   }
 }

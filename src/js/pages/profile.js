@@ -43,6 +43,9 @@ modal.addEventListener("click", (event) => {
   }
 });
 
+/**
+ * Function to create profile page with data from fetch
+ */
 async function createProfile() {
   const username = localStorage.getItem("usernameGavelbay");
   const accessToken = localStorage.getItem("accessToken");
@@ -79,7 +82,9 @@ async function createProfile() {
 createProfile();
 
 /**
- * Fetch to change avatar image on submit of form
+ * Function to update avatar
+ * If response ok, reload page. If not, display error.
+ * @param {event} event submit event
  */
 document.querySelector("#editAvatarForm").addEventListener("submit", async (event) => {
   event.preventDefault();

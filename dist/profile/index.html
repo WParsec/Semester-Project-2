@@ -11,7 +11,9 @@
   </head>
   <body class="bg-white font-sans">
     <header>
-      <nav class="p-5 shadow-xl">
+      <!-- Link for keyboard users to skip to main content. Only visible when in focus -->
+      <a href="#H1" class="absolute top-2 left-1/4 xl:left-4 opacity-0 focus:opacity-100" aria-label="Skip to main">Skip to main content</a>
+      <nav class="p-5">
         <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
           <div class="flex justify-between items-center">
             <a href="../../" class="cursor-pointer">
@@ -26,16 +28,22 @@
             class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full"
           >
             <li class="mt-10 md:m-0">
-              <a href="../../" class="pt-10 px-10 sm:p-3">Explore</a>
+              <a href="../../" class="px-10 sm:p-3 flex items-center gap-2"
+                ><i><img src="../assets/explore.svg" alt="Explore icon" /></i>Explore</a
+              >
             </li>
             <li id="liLogin" class="">
               <a href="../login/" class="p-3">Login</a>
             </li>
             <li id="liNewListing" class="hidden">
-              <a href="../create/" class="p-3">New Listing</a>
+              <a href="../create/" class="p-3 flex gap-2"
+                ><i><img src="../assets/create.svg" alt="Create icon" /></i>New Listing</a
+              >
             </li>
             <li id="liAccount" class="hidden">
-              <a href="../profile/" class="p-3 font-medium">Account</a>
+              <a href="../profile/" class="p-3 bg-gray rounded-md flex gap-2"
+                ><i><img src="../assets/profile.svg" alt="Profile icon" /></i> Account</a
+              >
             </li>
             <li id="liRegister">
               <a href="../register/" class="cta text-dark duration-400 px-7 py-3 rounded-md shadow-lg hover:scale-110 transition-all">Register</a>
@@ -48,7 +56,7 @@
       <section class="container m-auto max-w-6xl mt-8 px-5 lg:px-0">
         <div class="">
           <div class="flex w-full border-b border-soft">
-            <h1 class="text-xl md:text-3xl tracking-widest lg:pl-0">Profile</h1>
+            <h1 id="H1" class="text-xl md:text-3xl tracking-widest lg:pl-0">Profile</h1>
           </div>
         </div>
       </section>

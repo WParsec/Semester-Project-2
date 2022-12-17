@@ -39,6 +39,11 @@ form.addEventListener("submit", (event) => {
   }
 });
 
+/**
+ * Function that tries to register account and displays errors if any.
+ * If successful, function will transfer values to login function and log user in.
+ * @param {event} event Submit event
+ */
 async function registerSubmit(event) {
   // creates new object from FormData on submit
   const data = new FormData(event.target);

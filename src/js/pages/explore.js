@@ -22,7 +22,10 @@ runSort();
 // Url
 const standardUrl = baseUrl + allListingsUrl + sellerFlag + activeFlag + createdUrl;
 
-// Function fetches listings and builds page by looping results
+/**
+ * Function that fetches all listings and loops through result array to build page.
+ * @param {string} url Url string
+ */
 export async function createAllListings(url) {
   const resultArray = await standardFetch(url, createStandardHeader());
   listingGrid.innerHTML = "";
@@ -64,7 +67,8 @@ export async function createAllListings(url) {
   }
 
   /**
-   * Function for searching listing
+   * Function to search result array and filter results into new array that is looped and displayed on page.
+   * @param {array} array Array to search through
    */
   function searchListing(array) {
     searchInput.addEventListener("keyup", (event) => {

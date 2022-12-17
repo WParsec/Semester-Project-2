@@ -27,6 +27,10 @@ const bidForm = document.querySelector("#bidForm");
 
 bidForm.addEventListener("submit", placeBid);
 
+/**
+ * Function that tries to place bid on listing, and displays errors if any.
+ * @param {event} event Submit event
+ */
 async function placeBid(event) {
   event.preventDefault();
   const accessToken = localStorage.getItem("accessToken");
@@ -56,6 +60,10 @@ const sliderContainer = document.querySelector("#sliderContainer");
 const mediaNext = document.querySelector("#mediaNext");
 const mediaBack = document.querySelector("#mediaBack");
 
+/**
+ * Function that uses listing ID to send fetch and build listing specific page based on results data.
+ * @param {id} id String
+ */
 async function buildDetailsPage(id) {
   const response = await standardFetch(baseUrl + allListingsUrl + "/" + id + sellerFlag, createStandardHeader());
   const {

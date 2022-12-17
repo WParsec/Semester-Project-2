@@ -17,7 +17,7 @@ document.querySelector("#submitButton").addEventListener("click", () => {
 });
 
 /**
- * Collects input values from form and puts them in object "values"
+ * Collects input values from form and sends fetch with values
  * @param {event} event submit
  */
 async function loginSubmit(event) {

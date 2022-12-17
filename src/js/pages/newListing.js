@@ -28,6 +28,9 @@ const description = document.querySelector("#description");
 let mediaArray = [];
 let tagArray = [];
 
+/**
+ * Function that inserts input values into array and builds preview of elements based on arrays.
+ */
 function previewMedia() {
   if (mediaArray.length === 3) {
     mediaError.innerText = "Maximum 3 images";
@@ -57,6 +60,13 @@ function previewMedia() {
   }
 }
 
+/**
+ * Function that tries to place bid on listing, and displays errors if any.
+ * @param {number} iteration Loop iteration number
+ * @param {array} array Array to have item removed
+ * @param {Element} container Container to clear
+ * @param {func}
+ */
 function removeMedia(iteration, array, container, preview) {
   array.splice(iteration, 1);
   container.innerHTML = "";

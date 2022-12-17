@@ -11,7 +11,9 @@
   </head>
   <body class="bg-white font-sans">
     <header>
-      <nav class="p-5 shadow-xl">
+      <!-- Link for keyboard users to skip to main content. Only visible when in focus -->
+      <a href="#back" class="absolute top-2 left-1/4 xl:left-4 opacity-0 focus:opacity-100" aria-label="Skip to main">Skip to main content</a>
+      <nav class="p-5">
         <div class="md:flex md:items-center md:justify-between w-full max-w-6xl m-auto">
           <div class="flex justify-between items-center">
             <a href="../../index.html" class="cursor-pointer">
@@ -23,7 +25,7 @@
           </div>
           <ul
             id="menu"
-            class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full"
+            class="flex flex-col gap-10 items-center md:flex md:flex-row md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-8 bg-white h-full"
           >
             <li class="mt-10 md:m-0">
               <a href="../../" class="active pt-10 px-10 sm:p-3">Explore</a>
@@ -48,7 +50,7 @@
       <section class="container m-auto max-w-6xl mt-8 px-5 lg:px-0">
         <div class="">
           <div class="flex w-full border-b border-soft justify-between">
-            <a href="../../" class="text-dark text-center tracking-widest md:text-left lg:pl-0">Back</a>
+            <a id="back" href="../../" class="text-dark text-center tracking-widest md:text-left lg:pl-0">Back</a>
             <div class="hidden" id="creditsDiv">Tokens: <span id="creditSpan" class="text-dark-green text-xl font-medium"></span></div>
           </div>
         </div>
@@ -76,15 +78,15 @@
                 </div>
               </div>
               <div class="flex justify-evenly items-center mx-auto py-8 w-60">
-                <div id="mediaBack" tabindex="0" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
+                <button id="mediaBack" tabindex="0" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
                   <img src="../assets/arrow.png" alt="" />
-                </div>
+                </button>
                 <div class="px-4">
                   <p>Page <span id="pageCurrent">1</span> of<span id="pageTotal"></span></p>
                 </div>
-                <div id="mediaNext" tabindex="0" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
+                <button id="mediaNext" tabindex="0" class="bg-white h-14 w-14 rounded-full shadow-md flex items-center justify-center cursor-pointer">
                   <img src="../assets/arrow.png" class="rotate-180" alt="" />
-                </div>
+                </button>
               </div>
             </div>
             <!-- Div right -->
