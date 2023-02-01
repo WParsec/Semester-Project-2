@@ -109,7 +109,7 @@ export async function createAllListings(url) {
         listingClone.querySelector("#listingSeller").innerText = `${name}`;
         listingClone.querySelector("#listingEnds").innerText = `${formatDate(endsAt)}`;
         listingClone.querySelector("#listingMedia").style.backgroundImage = `url(${media[0]})`;
-        listingClone.querySelector("#listingMedia").href = `../../dist/details/index.html?id=${id}`;
+        listingClone.querySelector("#listingMedia").href = `./dist/details/index.html?id=${id}`;
 
         // finally appending the child
         listingGrid.appendChild(listingClone);
