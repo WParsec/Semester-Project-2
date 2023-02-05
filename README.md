@@ -31,7 +31,7 @@ For market relevance, I decided to create an NFT auction website.
 - Project is configured to run deployment to Github pages on push to branch "Main"
   [![Deploy static content to Pages](https://github.com/WParsec/Semester-Project-2/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/WParsec/Semester-Project-2/actions/workflows/pages.yml)
 
-- Project link: https://wparsec.github.io/Semester-Project-2/
+- Live site: https://wparsec.github.io/Semester-Project-2/
 
 ## Assignment Brief
 
