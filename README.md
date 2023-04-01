@@ -1,3 +1,6 @@
+![Site image](./gavelbay.png)
+
+
 # Semester Project 2nd Year - Gavelbay
 
 ## Introduction
